@@ -191,8 +191,6 @@ bool	PhoneBook::addContact()
 
 
 
-
-
 bool	containOnlyWhitespaces(std::string s)
 {
 	int	length = s.length();
