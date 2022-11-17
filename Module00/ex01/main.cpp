@@ -30,12 +30,12 @@ class Contact
 	    std::string	phoneNumber;
 	    std::string	darkestSecret;
 	public:
-		bool	setFisrtName(std::string fisrtName);
-		bool	setLastName(std::string lastName);
-		bool	setNickName(std::string nickName);
-		bool	setPhoneNumber(std::string phoneNumber);
-		bool	setDarkestSecret(std::string darkestSecret);
-		void	contactInfo();
+		bool		setFisrtName(std::string fisrtName);
+		bool		setLastName(std::string lastName);
+		bool		setNickName(std::string nickName);
+		bool		setPhoneNumber(std::string phoneNumber);
+		bool		setDarkestSecret(std::string darkestSecret);
+		void		contactInfo();
 };
 void	Contact::contactInfo()
 {
@@ -92,6 +92,22 @@ bool	Contact::setDarkestSecret(std::string darkestSecret)
 /*							Phonebook								   */ 	
 /***********************************************************************/
 
+class main
+{
+private:
+	/* data */
+public:
+	main(/* args */);
+	~main();
+};
+
+main::main(/* args */)
+{
+}
+
+main::~main()
+{
+}
 
 
 
@@ -100,17 +116,62 @@ class PhoneBook
 {
 	private:
 		Contact contacts[8];
-		int		index;
+		int		index{0};
 	public:
-		PhoneBook();
+		bool	addContact();
 		
 };
 
-PhoneBook::PhoneBook()
-{
-	index = 0;
-}
 
+bool	PhoneBook::addContact()
+{
+	std::string	s;
+	bool		notEmpty = false;
+
+	while (!notEmpty)
+	{
+		std::getline(std::cin, s);
+		notEmpty = contacts[index].setFisrtName(s);
+		if (!notEmpty)
+			std::cout << "Field cannot be empty!\n";
+	}
+	notEmpty = false;
+	while (!notEmpty)
+	{
+		std::getline(std::cin, s);
+		notEmpty = contacts[index].setLastName(s);
+		if (!notEmpty)
+			std::cout << "Field cannot be empty!\n";
+	}
+	notEmpty = false;
+	while (!notEmpty)
+	{
+		std::getline(std::cin, s);
+		notEmpty = contacts[index].setNickName(s);
+		if (!notEmpty)
+			std::cout << "Field cannot be empty!\n";
+	}
+	notEmpty = false;
+	while (!notEmpty)
+	{
+		std::getline(std::cin, s);
+		notEmpty = contacts[index].setPhoneNumber(s);
+		if (!notEmpty)
+			std::cout << "Field cannot be empty!\n";
+	}
+	notEmpty = false;
+	while (!notEmpty)
+	{
+		std::getline(std::cin, s);
+		notEmpty = contacts[index].setDarkestSecret(s);
+		if (!notEmpty)
+			std::cout << "Field cannot be empty!\n";
+	}
+	contacts[index].contactInfo();
+	index++;
+	if (index >= 8)
+		index = 0;
+}
 
 
 
@@ -146,22 +207,7 @@ bool	containOnlyWhitespaces(std::string s)
 
 int	main()
 {
-	Contact contact;
-	std::string	s;
-	std::cin >> s;
-	if (!contact.setFisrtName(s))
-		std::cout << "empty str\n";
-	std::cin >> s;
-	if (!contact.setLastName(s))
-		std::cout << "empty str\n";
-	std::cin >> s;
-	if (!contact.setPhoneNumber(s))
-		std::cout << "empty str\n";
-	std::cin >> s;
-	if (!contact.setNickName(s))
-		std::cout << "empty str\n";
-	std::cin >> s;
-	if (!contact.setDarkestSecret(s))
-		std::cout << "empty str\n";
-	contact.contactInfo();
+	PhoneBook	motorola;
+
+	motorola.addContact();
 }
