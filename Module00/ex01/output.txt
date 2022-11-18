@@ -1,0 +1,21 @@
+AVAILABLE   CMDS : 
+                  -> ADD
+                  -> SEARCH 
+                  -> EXIT
+>>Enter your firstname:
+Enter your lastname:
+Enter your nickname:
+Enter your phone number:
+Enter your darkest secret:
+the contact is succesfully added !
+>>*-----------------------------------------------------------------*
+|index     |firstname |lastname  |nickname  |phonenumb.|darkestse.|
+*-----------------------------------------------------------------*
+|0         |taha      |meaizi    |momeaizi  |0659134184|secretsec.|
+*-----------------------------------------------------------------*
+Enter an index : firstname     : taha
+lasttname     : meaizi
+nicktname     : momeaizi
+phonenumber   : 0659134184
+darkestsecret : secretsecretsecretsecretsecretsecretsecretsecretsecretsecretsecretsecretsecretsecretsecretsecretsecretsecretsecretsecretsecretsecretsecretsecretsecret
+>>
