@@ -6,7 +6,7 @@
 /*   By: momeaizi <momeaizi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 11:50:47 by momeaizi          #+#    #+#             */
-/*   Updated: 2022/11/18 12:07:03 by momeaizi         ###   ########.fr       */
+/*   Updated: 2022/11/18 12:26:47 by momeaizi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	main(int ac, char **av)
     std::cout << "                  -> ADD\n";
     std::cout << "                  -> SEARCH \n";
     std::cout << "                  -> EXIT\n";
-	while (1)
+	while (!std::cin.eof())
 	{
 		std::cout << ">> ";
 		std::getline(std::cin, line);
