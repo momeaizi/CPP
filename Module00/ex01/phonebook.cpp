@@ -6,7 +6,7 @@
 /*   By: momeaizi <momeaizi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 11:50:07 by momeaizi          #+#    #+#             */
-/*   Updated: 2022/11/18 12:36:03 by momeaizi         ###   ########.fr       */
+/*   Updated: 2022/11/18 15:37:50 by momeaizi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,18 +70,14 @@ void	PhoneBook::addContact()
 void	PhoneBook::displayColumns()
 {
 	std::cout << '*';
-	for (int i = 0; i < 65; i++)
+	for (int i = 0; i < 43; i++)
 		std::cout << '-';
 	std::cout << "*\n";
-	std::cout << "|index     |";
-	std::cout << "firstname |";
-	std::cout << "lastname  |";
-	std::cout << "nickname  |";
-	std::cout << "phonenumb.|";
-	std::cout << "darkestse.|";
-	std::cout << '\n';
-	std::cout << '*';
-	for (int i = 0; i < 65; i++)
+	std::cout << "|     index|";
+	std::cout << " firstname|";
+	std::cout << "  lastname|";
+	std::cout << "  nickname|\n*";
+	for (int i = 0; i < 43; i++)
 		std::cout << '-';
 	std::cout << "*\n";
 	
@@ -89,11 +85,13 @@ void	PhoneBook::displayColumns()
 void	PhoneBook::displayAndTruncate(std::string s)
 {
 	int	length = s.length();
-	int	i;
-	
+	int	i = 0;
+
+	while (i++ < 10 - length)
+		std::cout << ' ';
 	for (i = 0; i < length; i++)
 	{
-		if (i == 9 && length > 10)
+		if (i == 9 && s.length() > 10)
 		{
 			std::cout << '.';
 			return ;
@@ -101,8 +99,6 @@ void	PhoneBook::displayAndTruncate(std::string s)
 		else
 			std::cout << s[i];
 	}
-	while (i++ < 10)
-		std::cout << ' ';
 }
 
 void	PhoneBook::displayContact(int i)
@@ -115,14 +111,10 @@ void	PhoneBook::displayContact(int i)
 	displayAndTruncate(contacts[i].getLastName());
 	std::cout << '|';
 	displayAndTruncate(contacts[i].getNickName());
-	std::cout << '|';
-	displayAndTruncate(contacts[i].getPhoneNumber());
-	std::cout << '|';
-	displayAndTruncate(contacts[i].getDarkestSecret());
 	std::cout << "|\n";
 	//
 	std::cout << '*';
-	for (int i = 0; i < 65; i++)
+	for (int i = 0; i < 43; i++)
 		std::cout << '-';
 	std::cout << "*\n";
 }
@@ -130,9 +122,7 @@ void	PhoneBook::displayContacts()
 {
 	displayColumns();
 	for (int i = 0; i < size && i < 8; i++)
-	{
 		displayContact(i);
-	}
 }
 bool	PhoneBook::containOnlyDigits(std::string index)
 {
@@ -149,7 +139,7 @@ void	PhoneBook::search()
 	std::string	s;
 
 	displayContacts();
-	std::cout << "Enter an index : ";
+	std::cout << "Enter an index -> ";
 	std::getline(std::cin, s);
 	if (containOnlyDigits(s))
 		i = stoi(s);
@@ -166,3 +156,4 @@ PhoneBook::PhoneBook()
     index = 0;
     size = 0;
 }
+

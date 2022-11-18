@@ -6,7 +6,7 @@
 /*   By: momeaizi <momeaizi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 11:49:12 by momeaizi          #+#    #+#             */
-/*   Updated: 2022/11/18 12:02:22 by momeaizi         ###   ########.fr       */
+/*   Updated: 2022/11/18 15:20:16 by momeaizi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,15 @@
 
 void	Contact::contactInfo()
 {
-	std::cout << "firstname     : ";
+	std::cout << "firstname      : ";
 	std::cout << getFisrtName() << std::endl;
-	std::cout << "lasttname     : ";
+	std::cout << "lasttname      : ";
 	std::cout << getLastName() << std::endl;
-	std::cout << "nicktname     : ";
+	std::cout << "nicktname      : ";
 	std::cout << getNickName() << std::endl;
-	std::cout << "phonenumber   : ";
+	std::cout << "phonenumber    : ";
 	std::cout << getPhoneNumber() << std::endl;
-	std::cout << "darkestsecret : ";
+	std::cout << "darkestsecret  : ";
 	std::cout << getDarkestSecret() << std::endl;
 }
 bool	Contact::setFisrtName(std::string fisrtName)
