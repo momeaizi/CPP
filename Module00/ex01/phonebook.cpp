@@ -6,7 +6,7 @@
 /*   By: momeaizi <momeaizi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 11:50:07 by momeaizi          #+#    #+#             */
-/*   Updated: 2022/11/18 12:02:23 by momeaizi         ###   ########.fr       */
+/*   Updated: 2022/11/18 12:36:03 by momeaizi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	PhoneBook::addContact()
 	bool		notEmpty = false;
 
 	std::cout << "Enter your firstname:\n";
-	while (!notEmpty)
+	while (!notEmpty && !std::cin.eof())
 	{
 		std::getline(std::cin, s);
 		notEmpty = contacts[index].setFisrtName(s);
@@ -27,7 +27,7 @@ void	PhoneBook::addContact()
 	}
 	notEmpty = false;
 	std::cout << "Enter your lastname:\n";
-	while (!notEmpty)
+	while (!notEmpty && !std::cin.eof())
 	{
 		std::getline(std::cin, s);
 		notEmpty = contacts[index].setLastName(s);
@@ -36,7 +36,7 @@ void	PhoneBook::addContact()
 	}
 	notEmpty = false;
 	std::cout << "Enter your nickname:\n";
-	while (!notEmpty)
+	while (!notEmpty && !std::cin.eof())
 	{
 		std::getline(std::cin, s);
 		notEmpty = contacts[index].setNickName(s);
@@ -45,7 +45,7 @@ void	PhoneBook::addContact()
 	}
 	notEmpty = false;
 	std::cout << "Enter your phone number:\n";
-	while (!notEmpty)
+	while (!notEmpty && !std::cin.eof())
 	{
 		std::getline(std::cin, s);
 		notEmpty = contacts[index].setPhoneNumber(s);
@@ -54,7 +54,7 @@ void	PhoneBook::addContact()
 	}
 	notEmpty = false;
 	std::cout << "Enter your darkest secret:\n";
-	while (!notEmpty)
+	while (!notEmpty && !std::cin.eof())
 	{
 		std::getline(std::cin, s);
 		notEmpty = contacts[index].setDarkestSecret(s);
