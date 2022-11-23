@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   HumanA.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: momeaizi <momeaizi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/21 12:41:22 by momeaizi          #+#    #+#             */
-/*   Updated: 2022/11/22 18:05:40 by momeaizi         ###   ########.fr       */
+/*   Created: 2022/11/19 20:07:55 by momeaizi          #+#    #+#             */
+/*   Updated: 2022/11/19 22:09:39 by momeaizi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Harl.hpp"
+#ifndef HUMANA_HPP
+#define HUMANA_HPP
 
-int main()
+#include "Weapon.hpp"
+
+class HumanA
 {
-    Harl harl1;
-    Harl harl2;
-    Harl harl3;
+private:
+    std::string name;
+    Weapon      &weapon;
+public:
+    HumanA(std::string name, Weapon &weapon);
+    ~HumanA();
+    void    attack(void);
+};
 
-    harl1.complain("DEBUG");
-    harl2.complain("INFO");
-    harl2.complain("ERROR");
-    harl3.complain("tttt");
-
-    return 0;
-}
+#endif

@@ -5,23 +5,19 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: momeaizi <momeaizi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/21 12:41:22 by momeaizi          #+#    #+#             */
-/*   Updated: 2022/11/22 18:05:40 by momeaizi         ###   ########.fr       */
+/*   Created: 2022/11/19 13:27:16 by momeaizi          #+#    #+#             */
+/*   Updated: 2022/11/22 17:25:16 by momeaizi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Harl.hpp"
+#include "Zombie.hpp"
+
 
 int main()
 {
-    Harl harl1;
-    Harl harl2;
-    Harl harl3;
-
-    harl1.complain("DEBUG");
-    harl2.complain("INFO");
-    harl2.complain("ERROR");
-    harl3.complain("tttt");
-
-    return 0;
+    Zombie  *z1 = zombieHorde(10, "RIIIIICK");
+    
+    for (int i = 0; i < 10; i++)
+        z1->announce();
+    delete [] z1;
 }

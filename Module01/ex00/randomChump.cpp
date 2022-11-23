@@ -1,27 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   randomChump.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: momeaizi <momeaizi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/21 12:41:22 by momeaizi          #+#    #+#             */
-/*   Updated: 2022/11/22 18:05:40 by momeaizi         ###   ########.fr       */
+/*   Created: 2022/11/19 13:26:10 by momeaizi          #+#    #+#             */
+/*   Updated: 2022/11/19 13:26:57 by momeaizi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Harl.hpp"
+#include "Zombie.hpp"
 
-int main()
+void    randomChump( std::string name )
 {
-    Harl harl1;
-    Harl harl2;
-    Harl harl3;
-
-    harl1.complain("DEBUG");
-    harl2.complain("INFO");
-    harl2.complain("ERROR");
-    harl3.complain("tttt");
-
-    return 0;
+    Zombie  zombie(name);
+    
+    zombie.announce();
 }

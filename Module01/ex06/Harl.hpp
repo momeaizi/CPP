@@ -1,27 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: momeaizi <momeaizi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/21 12:41:22 by momeaizi          #+#    #+#             */
-/*   Updated: 2022/11/22 18:05:40 by momeaizi         ###   ########.fr       */
+/*   Created: 2022/11/21 12:41:48 by momeaizi          #+#    #+#             */
+/*   Updated: 2022/11/22 15:26:09 by momeaizi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Harl.hpp"
+#ifndef HARL_HPP
+#define HARL_HPP
 
-int main()
+#include <iostream>
+#include <string>
+class Harl
 {
-    Harl harl1;
-    Harl harl2;
-    Harl harl3;
+    private:
+        void    info( void );
+        void    warning( void );
+        void    error( void );
+        void    debug( void );
+    public:
+        void    complain( std::string level );
+};
 
-    harl1.complain("DEBUG");
-    harl2.complain("INFO");
-    harl2.complain("ERROR");
-    harl3.complain("tttt");
 
-    return 0;
-}
+#endif

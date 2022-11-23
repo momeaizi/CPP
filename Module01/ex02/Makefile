@@ -1,12 +1,11 @@
-NAME = Harl2.0
+NAME = REFVSPTR
 
 
 CC = c++ -std=c++98 
 
 CPPFLAGS = -Wall -Wextra -Werror -fsanitize=address -g
 
-SRCS =	main.cpp \
-		Harl.cpp
+SRCS =	main.cpp
 
 OBJS:=$(SRCS:.cpp=.o)
 

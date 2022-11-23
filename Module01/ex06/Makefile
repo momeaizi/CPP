@@ -1,4 +1,4 @@
-NAME = Harl2.0
+NAME = HarlFilter
 
 
 CC = c++ -std=c++98 

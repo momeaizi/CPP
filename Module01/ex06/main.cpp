@@ -5,23 +5,18 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: momeaizi <momeaizi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/21 12:41:22 by momeaizi          #+#    #+#             */
-/*   Updated: 2022/11/22 18:05:40 by momeaizi         ###   ########.fr       */
+/*   Created: 2022/11/21 12:35:11 by momeaizi          #+#    #+#             */
+/*   Updated: 2022/11/22 18:09:45 by momeaizi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Harl.hpp"
-
-int main()
+int main(int ac, char **av)
 {
-    Harl harl1;
-    Harl harl2;
-    Harl harl3;
+    Harl harl;
 
-    harl1.complain("DEBUG");
-    harl2.complain("INFO");
-    harl2.complain("ERROR");
-    harl3.complain("tttt");
-
+    if (ac != 2)
+        return 1;
+    harl.complain(av[1]);
     return 0;
 }

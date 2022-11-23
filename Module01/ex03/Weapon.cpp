@@ -1,27 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Weapon.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: momeaizi <momeaizi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/21 12:41:22 by momeaizi          #+#    #+#             */
-/*   Updated: 2022/11/22 18:05:40 by momeaizi         ###   ########.fr       */
+/*   Created: 2022/11/19 20:10:05 by momeaizi          #+#    #+#             */
+/*   Updated: 2022/11/19 22:17:47 by momeaizi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Harl.hpp"
+#include "Weapon.hpp"
 
-int main()
+Weapon::Weapon(std::string type)
 {
-    Harl harl1;
-    Harl harl2;
-    Harl harl3;
+    this->type = type;
+}
+Weapon::~Weapon() {}
 
-    harl1.complain("DEBUG");
-    harl2.complain("INFO");
-    harl2.complain("ERROR");
-    harl3.complain("tttt");
-
-    return 0;
+const   std::string  &Weapon::getType()
+{
+    return type;
+}
+void    Weapon::setType(std::string type)
+{
+    this->type = type;
 }

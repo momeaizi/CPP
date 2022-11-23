@@ -1,12 +1,11 @@
-NAME = Harl2.0
+NAME = megaphone
 
 
 CC = c++ -std=c++98 
 
 CPPFLAGS = -Wall -Wextra -Werror -fsanitize=address -g
 
-SRCS =	main.cpp \
-		Harl.cpp
+SRCS =	megaphone.cpp
 
 OBJS:=$(SRCS:.cpp=.o)
 

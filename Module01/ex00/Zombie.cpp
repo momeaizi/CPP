@@ -1,27 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: momeaizi <momeaizi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/21 12:41:22 by momeaizi          #+#    #+#             */
-/*   Updated: 2022/11/22 18:05:40 by momeaizi         ###   ########.fr       */
+/*   Created: 2022/11/19 13:19:46 by momeaizi          #+#    #+#             */
+/*   Updated: 2022/11/23 19:42:49 by momeaizi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Harl.hpp"
+#include "Zombie.hpp"
 
-int main()
+Zombie::Zombie(std::string name) : name ( name ) {}
+
+Zombie::~Zombie()
 {
-    Harl harl1;
-    Harl harl2;
-    Harl harl3;
+    std::cout  << name << " is dead !\n"; 
+}
 
-    harl1.complain("DEBUG");
-    harl2.complain("INFO");
-    harl2.complain("ERROR");
-    harl3.complain("tttt");
-
-    return 0;
+void    Zombie::announce( void )
+{
+    std::cout << name << ": BraiiiiiiinnnzzzZ...\n";
 }

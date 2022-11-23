@@ -1,4 +1,4 @@
-NAME = Harl2.0
+NAME =	BraiiiiiiinnnzzzZ
 
 
 CC = c++ -std=c++98 
@@ -6,7 +6,9 @@ CC = c++ -std=c++98
 CPPFLAGS = -Wall -Wextra -Werror -fsanitize=address -g
 
 SRCS =	main.cpp \
-		Harl.cpp
+		Zombie.cpp \
+		newZombie.cpp \
+		randomChump.cpp
 
 OBJS:=$(SRCS:.cpp=.o)
 

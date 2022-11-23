@@ -5,23 +5,29 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: momeaizi <momeaizi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/21 12:41:22 by momeaizi          #+#    #+#             */
-/*   Updated: 2022/11/22 18:05:40 by momeaizi         ###   ########.fr       */
+/*   Created: 2022/11/19 20:01:32 by momeaizi          #+#    #+#             */
+/*   Updated: 2022/11/22 17:29:24 by momeaizi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Harl.hpp"
+#include <iostream>
 
 int main()
 {
-    Harl harl1;
-    Harl harl2;
-    Harl harl3;
+    std::string brain = "HI THIS IS BRAIN";
+    std::string *stringPTR = &brain;
+    std::string &stringREF = brain;
 
-    harl1.complain("DEBUG");
-    harl2.complain("INFO");
-    harl2.complain("ERROR");
-    harl3.complain("tttt");
 
-    return 0;
+    std::cout << "\n\n    ADDRESSE\n\n";
+    std::cout << &brain << std::endl;
+    std::cout << stringPTR << std::endl;
+    std::cout << &stringREF << std::endl;
+    
+    std::cout << "\n\n    VALUE\n\n";
+    std::cout << brain << std::endl;
+    std::cout << *stringPTR << std::endl;
+    std::cout << stringREF << std::endl;
+    
+    return (0);
 }

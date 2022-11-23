@@ -1,16 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   phoneBook.cpp                                      :+:      :+:    :+:   */
+/*   phonebook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: momeaizi <momeaizi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 11:50:07 by momeaizi          #+#    #+#             */
-/*   Updated: 2022/11/18 15:37:50 by momeaizi         ###   ########.fr       */
+/*   Updated: 2022/11/23 20:04:48 by momeaizi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "phoneBook.hpp"
+#include <iomanip>
 
 void	PhoneBook::addContact()
 {
@@ -84,21 +85,13 @@ void	PhoneBook::displayColumns()
 }
 void	PhoneBook::displayAndTruncate(std::string s)
 {
-	int	length = s.length();
-	int	i = 0;
-
-	while (i++ < 10 - length)
-		std::cout << ' ';
-	for (i = 0; i < length; i++)
-	{
-		if (i == 9 && s.length() > 10)
-		{
-			std::cout << '.';
-			return ;
-		}
-		else
-			std::cout << s[i];
+	std::cout << std::setw(10);
+	if(s.size() > 10)
+	{	
+		s.resize(9);
+		s.append(".");
 	}
+	std::cout << s;
 }
 
 void	PhoneBook::displayContact(int i)
