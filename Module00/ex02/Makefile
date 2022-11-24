@@ -1,9 +1,9 @@
 NAME = TIHbank
 
 
-CC = c++ -std=c++98 
+CC = c++ 
 
-CPPFLAGS = -Wall -Wextra -Werror -fsanitize=address -g
+CPPFLAGS = -std=c++98  -Wall -Wextra -Werror -fsanitize=address -g
 
 SRCS =	Account.cpp \
 		tests.cpp

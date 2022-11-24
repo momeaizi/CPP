@@ -6,7 +6,7 @@
 /*   By: momeaizi <momeaizi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 11:50:07 by momeaizi          #+#    #+#             */
-/*   Updated: 2022/11/23 20:04:48 by momeaizi         ###   ########.fr       */
+/*   Updated: 2022/11/24 15:25:52 by momeaizi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,71 +18,71 @@ void	PhoneBook::addContact()
 	std::string	s;
 	bool		notEmpty = false;
 
-	std::cout << "Enter your firstname:\n";
 	while (!notEmpty && !std::cin.eof())
 	{
+		std::cout << "Enter your firstname: ";
 		std::getline(std::cin, s);
 		notEmpty = contacts[index].setFisrtName(s);
-		if (!notEmpty)
+		if (!notEmpty && !std::cin.eof())
 			std::cout << "Field cannot be empty!\n";
 	}
 	notEmpty = false;
-	std::cout << "Enter your lastname:\n";
 	while (!notEmpty && !std::cin.eof())
 	{
+		std::cout << "Enter your lastname: ";
 		std::getline(std::cin, s);
 		notEmpty = contacts[index].setLastName(s);
-		if (!notEmpty)
+		if (!notEmpty && !std::cin.eof())
 			std::cout << "Field cannot be empty!\n";
 	}
 	notEmpty = false;
-	std::cout << "Enter your nickname:\n";
 	while (!notEmpty && !std::cin.eof())
 	{
+		std::cout << "Enter your nickname: ";
 		std::getline(std::cin, s);
 		notEmpty = contacts[index].setNickName(s);
-		if (!notEmpty)
+		if (!notEmpty && !std::cin.eof())
 			std::cout << "Field cannot be empty!\n";
 	}
 	notEmpty = false;
-	std::cout << "Enter your phone number:\n";
 	while (!notEmpty && !std::cin.eof())
 	{
+		std::cout << "Enter your phone number: ";
 		std::getline(std::cin, s);
 		notEmpty = contacts[index].setPhoneNumber(s);
-		if (!notEmpty)
+		if (!notEmpty && !std::cin.eof())
 			std::cout << "Field cannot be empty!\n";
 	}
 	notEmpty = false;
-	std::cout << "Enter your darkest secret:\n";
 	while (!notEmpty && !std::cin.eof())
 	{
+		std::cout << "Enter your darkest secret: ";
 		std::getline(std::cin, s);
 		notEmpty = contacts[index].setDarkestSecret(s);
-		if (!notEmpty)
+		if (!notEmpty && !std::cin.eof())
 			std::cout << "Field cannot be empty!\n";
 	}
-	std::cout << "the contact is succesfully added !\n";
+	if (!std::cin.eof())
+		std::cout << "the contact is succesfully added !\n";
 	index++;
 	size++;
 	if (index >= 8)
 		index = 0;
 }
+
 void	PhoneBook::displayColumns()
 {
 	std::cout << '*';
 	for (int i = 0; i < 43; i++)
 		std::cout << '-';
 	std::cout << "*\n";
-	std::cout << "|     index|";
-	std::cout << " firstname|";
-	std::cout << "  lastname|";
-	std::cout << "  nickname|\n*";
+	std::cout << "|     index| firstname|  lastname|  nickname|\n*";
 	for (int i = 0; i < 43; i++)
 		std::cout << '-';
 	std::cout << "*\n";
 	
 }
+
 void	PhoneBook::displayAndTruncate(std::string s)
 {
 	std::cout << std::setw(10);
@@ -111,12 +111,14 @@ void	PhoneBook::displayContact(int i)
 		std::cout << '-';
 	std::cout << "*\n";
 }
+
 void	PhoneBook::displayContacts()
 {
 	displayColumns();
 	for (int i = 0; i < size && i < 8; i++)
 		displayContact(i);
 }
+
 bool	PhoneBook::containOnlyDigits(std::string index)
 {
 	for (size_t i = 0; i < index.length(); i++)
@@ -126,6 +128,7 @@ bool	PhoneBook::containOnlyDigits(std::string index)
 	}
 	return true;
 }
+
 void	PhoneBook::search()
 {
 	int			i = -1;
@@ -134,6 +137,8 @@ void	PhoneBook::search()
 	displayContacts();
 	std::cout << "Enter an index -> ";
 	std::getline(std::cin, s);
+	if (std::cin.eof())
+		return ;
 	if (containOnlyDigits(s))
 		i = stoi(s);
 	if (i >= size || i < 0)
@@ -149,4 +154,3 @@ PhoneBook::PhoneBook()
     index = 0;
     size = 0;
 }
-
