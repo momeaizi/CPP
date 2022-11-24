@@ -6,7 +6,7 @@
 /*   By: momeaizi <momeaizi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 11:50:07 by momeaizi          #+#    #+#             */
-/*   Updated: 2022/11/24 15:25:52 by momeaizi         ###   ########.fr       */
+/*   Updated: 2022/11/24 16:05:49 by momeaizi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -139,9 +139,9 @@ void	PhoneBook::search()
 	std::getline(std::cin, s);
 	if (std::cin.eof())
 		return ;
-	if (containOnlyDigits(s))
+	if (containOnlyDigits(s) && s.length())
 		i = stoi(s);
-	if (i >= size || i < 0)
+	if (i < 0 || i >= size || i >= 8)
 	{
 		std::cout << "Invalid index!\n";
 		return ;
