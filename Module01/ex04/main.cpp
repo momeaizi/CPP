@@ -6,7 +6,7 @@
 /*   By: momeaizi <momeaizi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/20 19:50:21 by momeaizi          #+#    #+#             */
-/*   Updated: 2022/11/22 17:45:53 by momeaizi         ###   ########.fr       */
+/*   Updated: 2022/11/26 11:35:01 by momeaizi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void    openInFile(std::ifstream &inf, std::string filename)
     inf.open( filename );
     if (inf.fail())
     {
-        std::cerr << "Cannot open " << filename << " !\n";
+        std::cerr << "Cannot open " << filename << "!\n";
         exit(1);
     }
 }
@@ -27,7 +27,7 @@ void    openOutFile(std::ofstream &outf, std::string filename)
     outf.open( filename );
     if (outf.fail())
     {
-        std::cerr << "Cannot open " << filename << " !\n";
+        std::cerr << "Cannot open " << filename << "!\n";
         exit(1);
     }
 }

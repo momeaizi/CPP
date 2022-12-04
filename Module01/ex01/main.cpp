@@ -6,7 +6,7 @@
 /*   By: momeaizi <momeaizi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 13:27:16 by momeaizi          #+#    #+#             */
-/*   Updated: 2022/11/22 17:25:16 by momeaizi         ###   ########.fr       */
+/*   Updated: 2022/11/26 10:59:08 by momeaizi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,10 @@
 
 int main()
 {
-    Zombie  *z1 = zombieHorde(10, "RIIIIICK");
+    int N = 10;
+    Zombie  *z1 = zombieHorde(N, "RIIIIICK");
     
-    for (int i = 0; i < 10; i++)
+    for (int i = 0; i < N; i++)
         z1->announce();
     delete [] z1;
 }

@@ -6,11 +6,12 @@
 /*   By: momeaizi <momeaizi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 12:46:18 by momeaizi          #+#    #+#             */
-/*   Updated: 2022/11/23 17:16:01 by momeaizi         ###   ########.fr       */
+/*   Updated: 2022/11/26 10:54:57 by momeaizi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Harl.hpp"
+#include <stdio.h>
 
 void    Harl::debug( void )
 {
@@ -36,12 +37,10 @@ void    Harl::complain( std::string level )
     int index = -1;
     
     for (int i = 0; i < 4; i++)
-    {
         if (level == levels[i])
             index = i;
-    }
     if (index == -1)
         std::cout << "[ Probably complaining about insignificant problems ]\n";
     else
-        (*harlFcnt[index])();
+        (this->*harlFcnt[index])();
 }

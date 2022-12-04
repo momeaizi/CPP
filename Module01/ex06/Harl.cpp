@@ -6,7 +6,7 @@
 /*   By: momeaizi <momeaizi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 12:46:18 by momeaizi          #+#    #+#             */
-/*   Updated: 2022/11/22 18:15:41 by momeaizi         ###   ########.fr       */
+/*   Updated: 2022/11/26 11:44:24 by momeaizi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,10 +39,8 @@ void    Harl::complain( std::string level )
     int index = -1;
 
     for (int i = 0; i < 4; i++)
-    {
         if (level == levels[i])
             index = i;
-    }
     
     switch (index)
     {

@@ -6,19 +6,17 @@
 /*   By: momeaizi <momeaizi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 13:00:35 by momeaizi          #+#    #+#             */
-/*   Updated: 2022/11/23 19:49:20 by momeaizi         ###   ########.fr       */
+/*   Updated: 2022/11/24 16:12:30 by momeaizi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include <cstring>
 
 void	megaphone(char *str)
 {
 	for (int i = 0; str[i]; i++)
 	{
-		if (islower(str[i]))
-			str[i] -= 32;
+		str[i] = toupper(str[i]);
 		std::cout << str[i];
 	}
 }
@@ -31,4 +29,3 @@ int	main(int ac, char **av)
 		megaphone(av[i]);
 	std::cout << std::endl;
 }
-

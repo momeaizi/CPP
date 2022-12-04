@@ -3,7 +3,7 @@ NAME = HarlFilter
 
 CC = c++ -std=c++98 
 
-CPPFLAGS = -Wall -Wextra -Werror -fsanitize=address -g
+CPPFLAGS = -std=c++98 -Wall -Wextra -Werror -fsanitize=address -g
 
 SRCS =	main.cpp \
 		Harl.cpp
