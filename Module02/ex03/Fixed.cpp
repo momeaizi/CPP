@@ -6,7 +6,7 @@
 /*   By: momeaizi <momeaizi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 11:03:58 by momeaizi          #+#    #+#             */
-/*   Updated: 2022/12/10 13:13:02 by momeaizi         ###   ########.fr       */
+/*   Updated: 2022/12/11 14:49:23 by momeaizi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ Fixed::Fixed(const Fixed &f) : value (0)
 
 Fixed::Fixed(const int n) : value (n << fractionalBits) {}
 
-Fixed::Fixed(const float f) : value (roundf(f * pow(2, fractionalBits))) Œ{}
+Fixed::Fixed(const float f) : value (roundf(f * pow(2, fractionalBits))) {}
 
 Fixed::~Fixed()
 {

@@ -6,7 +6,7 @@
 /*   By: momeaizi <momeaizi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 10:57:26 by momeaizi          #+#    #+#             */
-/*   Updated: 2022/12/08 19:41:35 by momeaizi         ###   ########.fr       */
+/*   Updated: 2022/12/10 12:47:33 by momeaizi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,10 +40,10 @@ class Fixed
         bool                operator<=(const Fixed& f);
         bool                operator==(const Fixed& f);
         bool                operator!=(const Fixed& f);
-        Fixed               &operator++();
-        Fixed               &operator--();
-        Fixed               operator++(int);
-        Fixed               operator--(int);
+        Fixed               &operator++(int);
+        Fixed               &operator--(int);
+        Fixed               operator++();
+        Fixed               operator--();
 
         int                 getRawBits( void ) const;
         void                setRawBits( int const raw );
@@ -57,5 +57,5 @@ class Fixed
 };
 
 std::ostream    &operator<<(std::ostream &os, const Fixed& f);
-
+float           pow(int a, int n);
 #endif

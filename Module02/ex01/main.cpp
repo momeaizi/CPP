@@ -6,25 +6,25 @@
 /*   By: momeaizi <momeaizi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 10:57:08 by momeaizi          #+#    #+#             */
-/*   Updated: 2022/12/11 16:12:48 by momeaizi         ###   ########.fr       */
+/*   Updated: 2022/12/08 15:53:30 by momeaizi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Point.hpp"
-#include <iomanip>
+#include "Fixed.hpp"
 
-#include <iostream>
 int main( void ) {
-    
-    Point a = Point(0, 5);
-    Point c = Point(0, 0);
-    Point b = Point(7, 5);
-
-    
-    Point p = Point(-0.01f, 0.01f);
-
-    std::cout << bsp(a, b, c, p) << std::endl;
-
-    
+    Fixed a;
+    Fixed const b( 10 );
+    Fixed const c( 42.42f );
+    Fixed const d( b );
+    a = Fixed( 1234.4321f );
+    std::cout << "a is " << a << std::endl;
+    std::cout << "b is " << b << std::endl;
+    std::cout << "c is " << c << std::endl;
+    std::cout << "d is " << d << std::endl;
+    std::cout << "a is " << a.toInt() << " as integer" << std::endl;
+    std::cout << "b is " << b.toInt() << " as integer" << std::endl;
+    std::cout << "c is " << c.toInt() << " as integer" << std::endl;
+    std::cout << "d is " << d.toInt() << " as integer" << std::endl;
     return 0;
 }

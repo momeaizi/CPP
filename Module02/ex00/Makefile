@@ -1,4 +1,4 @@
-NAME =	BSP
+NAME =	Fixed
 
 
 CC = c++ 
@@ -6,8 +6,7 @@ CC = c++
 CPPFLAGS = -std=c++98  -Wall -Wextra -Werror -fsanitize=address -g
 
 SRCS =	main.cpp \
-		Fixed.cpp \
-		Point.cpp
+		Fixed.cpp
 
 OBJS:=$(SRCS:.cpp=.o)
 
