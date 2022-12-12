@@ -6,7 +6,7 @@
 /*   By: momeaizi <momeaizi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 10:57:26 by momeaizi          #+#    #+#             */
-/*   Updated: 2022/12/08 15:52:09 by momeaizi         ###   ########.fr       */
+/*   Updated: 2022/12/12 12:01:58 by momeaizi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,15 +24,17 @@ class Fixed
         static const int    fractionalBits;
     public:
         Fixed();
-        Fixed(const Fixed &a);
-        Fixed(const float f);
-        Fixed(int n);
+        Fixed(Fixed const &a);
+        Fixed(float const f);
+        Fixed(int const n);
         ~Fixed();
-        Fixed   &operator= (const Fixed& f);
+        
         int     getRawBits( void ) const;
         void    setRawBits( int const raw );
         float   toFloat( void ) const;
         int     toInt( void ) const;
+        
+        Fixed   &operator= (const Fixed& f);
 };
 
 std::ostream    &operator<<(std::ostream &os, const Fixed& f);

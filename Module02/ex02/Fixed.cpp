@@ -6,7 +6,7 @@
 /*   By: momeaizi <momeaizi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 11:03:58 by momeaizi          #+#    #+#             */
-/*   Updated: 2022/12/10 12:47:20 by momeaizi         ###   ########.fr       */
+/*   Updated: 2022/12/12 12:43:47 by momeaizi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,18 +19,18 @@ Fixed::Fixed() : value (0)
     std::cout << "Default constructor called\n";
 }
 
-Fixed::Fixed(const Fixed &f) : value (0)
+Fixed::Fixed(Fixed const &f)
 {
     std::cout << "Copy constructor called\n";
     *this = f;
 }
 
-Fixed::Fixed(const int n) : value (n << fractionalBits)
+Fixed::Fixed(int const n) : value (n << fractionalBits)
 {
     std::cout << "Int constructor called\n";
 }
 
-Fixed::Fixed(const float f) : value (roundf(f * pow(2, fractionalBits)))
+Fixed::Fixed(float const f) : value (roundf(f * (float)(1 << fractionalBits)))
 {
     std::cout << "Float constructor called\n";
 }
@@ -59,12 +59,12 @@ int Fixed::toInt( void ) const
 
 float   Fixed::toFloat( void ) const
 {
-    return value / pow(2, fractionalBits);
+    return value / (float)(1 << fractionalBits);
 }
 
 Fixed   &Fixed::operator= (const Fixed& f)
 {
-    std::cout << "Copy assignment operator called\n";
+    // std::cout << "Copy assignment operator called\n";
     this->value = f.value;
     return *this;
 }
@@ -101,8 +101,8 @@ Fixed    Fixed::operator*(const Fixed& f)
 
 Fixed    Fixed::operator/(const Fixed& f)
 {
-    int value = this->value / f.value;
-    Fixed f1( value );
+    Fixed   f1;
+    f1.value = (this->value << fractionalBits) / f.value;
     return f1;
 }
 
@@ -136,29 +136,29 @@ bool    Fixed::operator!=(const Fixed& f)
     return this->value != f.value;
 }
 
-Fixed   &Fixed::operator++(int)
+Fixed   &Fixed::operator++()
 {
-    this->value += 1;
+    this->value++;
     return *this;
 }
 
-Fixed   &Fixed::operator--(int)
+Fixed   &Fixed::operator--()
 {
-    this->value -= 1;
+    this->value--;
     return *this;
 }
 
-Fixed   Fixed::operator++()
+Fixed   Fixed::operator++(int)
 {
     Fixed   original = *this;
-    this->value += 1;
+    this->value++;
     return original;
 }
 
-Fixed   Fixed::operator--()
+Fixed   Fixed::operator--(int)
 {
     Fixed   original = *this;
-    this->value -= 1;
+    this->value--;
     return original;
 }
 
@@ -188,12 +188,4 @@ const Fixed  &Fixed::max(const Fixed &a, const Fixed &b)
     if (a > b)
         return a;
     return b;
-}
-
-float pow(int a, int n)
-{
-    int res = 1;
-    for (int i = 0; i < n; i++)
-        res *= a;
-    return res;
 }

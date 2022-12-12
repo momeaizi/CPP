@@ -6,7 +6,7 @@
 /*   By: momeaizi <momeaizi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/10 13:03:52 by momeaizi          #+#    #+#             */
-/*   Updated: 2022/12/11 16:06:06 by momeaizi         ###   ########.fr       */
+/*   Updated: 2022/12/12 12:42:24 by momeaizi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ Point::Point(const Point &point)
 
 Point   &Point::operator= (const Point& point)
 {
-    std::cout << "Copy assignment operator called\n";
     this->x = point.x;
     this->y = point.y;
     return *this;
@@ -60,18 +59,15 @@ bool    bsp( Point const a, Point const b, Point const c, Point const point)
 {
     Fixed   A = area(a, b, c);
     Fixed   A1 = area(a, b, point);
-    // if (A1 == 0)
-    //     return false;
+    if (A1 == 0)
+        return false;
     Fixed   A2 = area(a, c, point);
-    // if (A2 == 0)
-    //     return false;
+    if (A2 == 0)
+        return false;
     Fixed   A3 = area(b, c, point);
-    // if (A3 == 0)
-    //     return false;
-    std::cout << A1 << std::endl;
-    std::cout << A2 << std::endl;
-    std::cout << A3 << std::endl;
-    std::cout << A1 + A2 + A3 << " -> " << A << std::endl;
+    if (A3 == 0)
+        return false;
+
     return A1 + A2 + A3 == A;
 }
 

@@ -6,7 +6,7 @@
 /*   By: momeaizi <momeaizi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 10:57:26 by momeaizi          #+#    #+#             */
-/*   Updated: 2022/12/10 12:47:33 by momeaizi         ###   ########.fr       */
+/*   Updated: 2022/12/12 12:24:26 by momeaizi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,15 @@ class Fixed
         static const int    fractionalBits;
     public:
         Fixed();
-        Fixed(const Fixed &a);
-        Fixed(const float f);
-        Fixed(int n);
+        Fixed(Fixed const &a);
+        Fixed(float const f);
+        Fixed(int const n);
         ~Fixed();
+
+        int                 getRawBits( void ) const;
+        void                setRawBits( int const raw );
+        float               toFloat( void ) const;
+        int                 toInt( void ) const;
 
         Fixed               &operator= (const Fixed& f);
         Fixed               operator+(const Fixed& f);
@@ -40,16 +45,11 @@ class Fixed
         bool                operator<=(const Fixed& f);
         bool                operator==(const Fixed& f);
         bool                operator!=(const Fixed& f);
-        Fixed               &operator++(int);
-        Fixed               &operator--(int);
-        Fixed               operator++();
-        Fixed               operator--();
-
-        int                 getRawBits( void ) const;
-        void                setRawBits( int const raw );
-        float               toFloat( void ) const;
-        int                 toInt( void ) const;
-
+        Fixed               operator++(int);
+        Fixed               operator--(int);
+        Fixed               &operator++();
+        Fixed               &operator--();
+        
         static Fixed        &min(Fixed &a, Fixed &b);
         static const Fixed  &min(const Fixed &a, const Fixed &b);
         static Fixed        &max(Fixed &a, Fixed &b);
@@ -57,5 +57,4 @@ class Fixed
 };
 
 std::ostream    &operator<<(std::ostream &os, const Fixed& f);
-float           pow(int a, int n);
 #endif

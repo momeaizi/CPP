@@ -6,7 +6,7 @@
 /*   By: momeaizi <momeaizi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 11:03:58 by momeaizi          #+#    #+#             */
-/*   Updated: 2022/12/10 11:19:35 by momeaizi         ###   ########.fr       */
+/*   Updated: 2022/12/12 12:08:42 by momeaizi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,18 +19,25 @@ Fixed::Fixed() : value (0)
     std::cout << "Default constructor called\n";
 }
 
-Fixed::Fixed(const Fixed &f) : value (0)
+Fixed::Fixed(const Fixed &f)
 {
     std::cout << "Copy constructor called\n";
     *this = f;
 }
 
-Fixed::Fixed(const int n) : value (n << fractionalBits)
+Fixed   &Fixed::operator= (const Fixed& f)
+{
+    std::cout << "Copy assignment operator called\n";
+    this->value = f.value;
+    return *this;
+}
+
+Fixed::Fixed(int const n) : value (n << fractionalBits)
 {
     std::cout << "Int constructor called\n";
 }
 
-Fixed::Fixed(const float f) : value (roundf(f * pow(2, fractionalBits)))
+Fixed::Fixed(float const f) : value (roundf(f * (1 << fractionalBits)))
 {
     std::cout << "Float constructor called\n";
 }
@@ -45,6 +52,7 @@ int     Fixed::getRawBits( void ) const
     std::cout << "getRawBits member function called\n";
     return value;
 }
+
 void    Fixed::setRawBits( int const raw )
 {
     std::cout << "setRawBits member function called\n";
@@ -58,14 +66,7 @@ int Fixed::toInt( void ) const
 
 float   Fixed::toFloat( void ) const
 {
-    return value / pow(2, fractionalBits);
-}
-
-Fixed   &Fixed::operator= (const Fixed& f)
-{
-    std::cout << "Copy assignment operator called\n";
-    this->value = f.value;
-    return *this;
+    return value / (float)(1 << fractionalBits);
 }
 
 std::ostream    &operator<<(std::ostream &os, const Fixed& f)
@@ -73,6 +74,3 @@ std::ostream    &operator<<(std::ostream &os, const Fixed& f)
     os << f.toFloat();
     return os;
 }
-
-
-
