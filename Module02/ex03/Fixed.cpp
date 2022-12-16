@@ -6,7 +6,7 @@
 /*   By: momeaizi <momeaizi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 11:03:58 by momeaizi          #+#    #+#             */
-/*   Updated: 2022/12/12 12:43:36 by momeaizi         ###   ########.fr       */
+/*   Updated: 2022/12/16 10:47:10 by momeaizi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ std::ostream    &operator<<(std::ostream &os, const Fixed& f)
     return os;
 }
 
-Fixed    Fixed::operator+(const Fixed& f)
+Fixed    Fixed::operator+(const Fixed& f) const
 {
     Fixed f1;
     int value = this->value + f.value;
@@ -83,7 +83,7 @@ Fixed    Fixed::operator+(const Fixed& f)
     return f1;
 }
 
-Fixed    Fixed::operator-(const Fixed& f)
+Fixed    Fixed::operator-(const Fixed& f) const
 {
     Fixed f1;
     int value = this->value - f.value;
@@ -91,7 +91,7 @@ Fixed    Fixed::operator-(const Fixed& f)
     return f1;
 }
 
-Fixed    Fixed::operator*(const Fixed& f)
+Fixed    Fixed::operator*(const Fixed& f) const
 {
     Fixed f1;
     int value = this->value * f.value;
@@ -99,7 +99,7 @@ Fixed    Fixed::operator*(const Fixed& f)
     return f1;
 }
 
-Fixed    Fixed::operator/(const Fixed& f)
+Fixed    Fixed::operator/(const Fixed& f) const
 {
     Fixed   f1;
     f1.value = (this->value << fractionalBits) / f.value;
@@ -116,22 +116,22 @@ bool    Fixed::operator<(const Fixed& f) const
     return this->value < f.value;
 }
 
-bool    Fixed::operator>=(const Fixed& f)
+bool    Fixed::operator>=(const Fixed& f) const
 {
     return this->value >= f.value;
 }
 
-bool    Fixed::operator<=(const Fixed& f)
+bool    Fixed::operator<=(const Fixed& f) const
 {
     return this->value <= f.value;
 }
 
-bool    Fixed::operator==(const Fixed& f)
+bool    Fixed::operator==(const Fixed& f) const
 {
     return this->value == f.value;
 }
 
-bool    Fixed::operator!=(const Fixed& f)
+bool    Fixed::operator!=(const Fixed& f) const
 {
     return this->value != f.value;
 }

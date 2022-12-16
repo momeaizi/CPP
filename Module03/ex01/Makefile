@@ -1,13 +1,13 @@
-NAME =	BSP
+NAME =	ClapTrap
 
 
-CXX = c++ 
+CC = c++ 
 
 CPPFLAGS = -std=c++98  -Wall -Wextra -Werror -fsanitize=address -g
 
 SRCS =	main.cpp \
-		Fixed.cpp \
-		Point.cpp
+		ClapTrap.cpp \
+		ScavTrap.cpp
 
 OBJS:=$(SRCS:.cpp=.o)
 
@@ -15,7 +15,7 @@ OBJS:=$(SRCS:.cpp=.o)
 all : $(NAME)
 
 $(NAME) : $(OBJS)
-	$(CXX)   $(CPPFLAGS) $(OBJS)  -o $(NAME)
+	$(CC)   $(CPPFLAGS) $(OBJS)  -o $(NAME)
 
 
 clean :

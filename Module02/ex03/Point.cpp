@@ -6,7 +6,7 @@
 /*   By: momeaizi <momeaizi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/10 13:03:52 by momeaizi          #+#    #+#             */
-/*   Updated: 2022/12/12 12:42:24 by momeaizi         ###   ########.fr       */
+/*   Updated: 2022/12/16 10:53:58 by momeaizi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,12 +71,12 @@ bool    bsp( Point const a, Point const b, Point const c, Point const point)
     return A1 + A2 + A3 == A;
 }
 
-Fixed   Point::getX()
+Fixed   Point::getX() const
 {
     return x;
 }
 
-Fixed   Point::getY()
+Fixed   Point::getY() const
 {
     return y;
 }

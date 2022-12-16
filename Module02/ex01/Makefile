@@ -1,7 +1,7 @@
 NAME =	Fixed
 
 
-CC = c++ 
+CXX = c++ 
 
 CPPFLAGS = -std=c++98  -Wall -Wextra -Werror -fsanitize=address -g
 
@@ -14,7 +14,7 @@ OBJS:=$(SRCS:.cpp=.o)
 all : $(NAME)
 
 $(NAME) : $(OBJS)
-	$(CC)   $(CPPFLAGS) $(OBJS)  -o $(NAME)
+	$(CXX)   $(CPPFLAGS) $(OBJS)  -o $(NAME)
 
 
 clean :
