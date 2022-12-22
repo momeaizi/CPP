@@ -6,7 +6,7 @@
 /*   By: momeaizi <momeaizi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 18:15:38 by momeaizi          #+#    #+#             */
-/*   Updated: 2022/12/21 15:11:06 by momeaizi         ###   ########.fr       */
+/*   Updated: 2022/12/21 15:41:59 by momeaizi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void    ScavTrap::attack(const std::string& target)
         return ;
     }
     Energy--;
-    std::cout << "ScavTrap " << name << " attacks " << target<< ", causing " << Attack << " points of damage!\n\n";
+    std::cout << "ScavTrap " << name << " attacks " << target << ", causing " << Attack << " points of damage!\n\n";
 }
 
 void    ScavTrap::guardGate()

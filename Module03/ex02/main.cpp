@@ -6,17 +6,17 @@
 /*   By: momeaizi <momeaizi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 15:55:55 by momeaizi          #+#    #+#             */
-/*   Updated: 2022/12/16 17:28:45 by momeaizi         ###   ########.fr       */
+/*   Updated: 2022/12/16 18:37:01 by momeaizi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
 int main()
 {
-    ScavTrap taha("taha");
+    FragTrap taha("taha");
 
-    ScavTrap taha1;
+    FragTrap taha1;
     taha1 = taha;
     
     taha.attack("sultan");
@@ -30,5 +30,5 @@ int main()
     taha.beRepaired(10);
     taha.attack("sultan");
     taha.attack("sultan");
-    taha.guardGate();
+    // taha.guardGate();
 }

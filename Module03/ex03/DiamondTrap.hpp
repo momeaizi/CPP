@@ -1,37 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: momeaizi <momeaizi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/15 18:15:03 by momeaizi          #+#    #+#             */
-/*   Updated: 2022/12/20 18:06:01 by momeaizi         ###   ########.fr       */
+/*   Created: 2022/12/20 14:46:10 by momeaizi          #+#    #+#             */
+/*   Updated: 2022/12/22 11:27:59 by momeaizi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_HPP
-#define SCAVTRAP_HPP
+#ifndef DIAMONTRAP_HPP
+#define DIAMONTRAP_HPP
 
 #include <string>
-#include <iostream>
+#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 #include "ClapTrap.hpp"
 
-class ScavTrap: public ClapTrap
+class DiamondTrap : public ScavTrap, public FragTrap
 {
-    public:
-        ScavTrap();
-        ScavTrap(const std::string &name);
-        ScavTrap(ScavTrap const &ScavTrap);
-        ~ScavTrap();
+private:
+    std::string name;
+public:
+    DiamondTrap();
+    DiamondTrap(DiamondTrap const &diamondTrap);
+    DiamondTrap(const std::string name);
+    DiamondTrap &operator=(DiamondTrap const &diamondTrap);
+    ~DiamondTrap();
 
-        ScavTrap &operator=(ScavTrap const &ScavTrap);
-
-        void    attack(const std::string& target);
-        void    guardGate();
+    void    attack(const std::string& target);
+    void    whoAmI();
 };
-
-
 
 
 

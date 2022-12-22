@@ -1,12 +1,13 @@
-NAME =	ClapTrap
+NAME =	FragTrap
 
 
-CC = c++ 
+CXXll = c++ 
 
 CPPFLAGS = -std=c++98  -Wall -Wextra -Werror -fsanitize=address -g
 
 SRCS =	main.cpp \
-		ClapTrap.cpp
+		ClapTrap.cpp \
+		FragTrap.cpp
 
 OBJS:=$(SRCS:.cpp=.o)
 
@@ -14,7 +15,7 @@ OBJS:=$(SRCS:.cpp=.o)
 all : $(NAME)
 
 $(NAME) : $(OBJS)
-	$(CC)   $(CPPFLAGS) $(OBJS)  -o $(NAME)
+	$(CXXll)   $(CPPFLAGS) $(OBJS)  -o $(NAME)
 
 
 clean :
@@ -23,4 +24,4 @@ clean :
 fclean : clean
 	rm -f $(NAME)
 
-re : clean all
+re : fclean all

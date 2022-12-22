@@ -6,7 +6,7 @@
 /*   By: momeaizi <momeaizi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 15:51:27 by momeaizi          #+#    #+#             */
-/*   Updated: 2022/12/20 18:05:41 by momeaizi         ###   ########.fr       */
+/*   Updated: 2022/12/22 11:16:29 by momeaizi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 class ClapTrap
 {
-    private:
+    protected:
         std::string     name;
         unsigned int    Hit;
         unsigned int    Energy;
@@ -32,7 +32,7 @@ class ClapTrap
         ClapTrap &operator=(ClapTrap const &claptrap);
         ~ClapTrap();
 
-        void                attack(const std::string& target);
+        virtual void        attack(const std::string& target);
         void                takeDamage(unsigned int amount);
         void                beRepaired(unsigned int amount);
 };
