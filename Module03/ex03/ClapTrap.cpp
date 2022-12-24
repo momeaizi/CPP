@@ -6,36 +6,36 @@
 /*   By: momeaizi <momeaizi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 15:52:12 by momeaizi          #+#    #+#             */
-/*   Updated: 2022/12/21 14:58:46 by momeaizi         ###   ########.fr       */
+/*   Updated: 2022/12/24 10:03:41 by momeaizi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap() : name ("----"), Hit (100), Energy (50), Attack (20)
+ClapTrap::ClapTrap() : name ("----"), Hit (10), Energy (10), Attack (0)
 {
-    std::cout << "ClapTrap default constructor is called\n\n";
+    std::cout << "(ClapTrap) default constructor is called\n\n";
 }
 
-ClapTrap::ClapTrap(const std::string name) : name (name), Hit (100), Energy (50), Attack (20)
+ClapTrap::ClapTrap(const std::string name) : name (name), Hit (10), Energy (10), Attack (0)
 {
-    std::cout << "ClapTrap parametrize constructor is called\n\n";
+    std::cout << "(ClapTrap) parametrize constructor is called\n\n";
 }
 
 ClapTrap::ClapTrap(const std::string name, int Hit, int Energy, int Attack) : name (name), Hit (Hit), Energy (Energy), Attack (Attack)
 {
-    std::cout << "ClapTrap parametrize constructor is called\n\n";
+    std::cout << "(ClapTrap) parametrize constructor is called\n\n";
 }
 
 ClapTrap::ClapTrap(ClapTrap const &claptrap)
 {
-    std::cout << "ClapTrap copy constructor is called\n\n";
+    std::cout << "(ClapTrap) copy constructor is called\n\n";
     *this = claptrap;
 }
 
 ClapTrap &ClapTrap::operator=(ClapTrap const &claptrap)
 {
-    std::cout << "ClapTrap copy assignement operator is called\n\n";
+    std::cout << "(ClapTrap) copy assignement operator is called\n\n";
     this->name = claptrap.name;
     this->Hit = claptrap.Hit;
     this->Energy = claptrap.Energy;
@@ -45,7 +45,7 @@ ClapTrap &ClapTrap::operator=(ClapTrap const &claptrap)
 
 ClapTrap::~ClapTrap()
 {
-    std::cout << "ClapTrap destructor is called\n\n";
+    std::cout << "(ClapTrap) destructor is called\n\n";
 }
 
 void    ClapTrap::attack(const std::string& target)
@@ -56,12 +56,12 @@ void    ClapTrap::attack(const std::string& target)
         return ;
     }
     Energy--;
-    std::cout << "ClapTrap " << name << " attacks " << target<< ", causing " << Attack << " points of damage!\n\n";
+    std::cout << "(ClapTrap) " << name << " attacks " << target<< ", causing " << Attack << " points of damage!\n\n";
 }
 
 void    ClapTrap::takeDamage(unsigned int amount)
 {
-    std::cout << name << " take " << amount<< " points of damage!\n\n";
+    std::cout << "(ClapTrap) " << name << " take " << amount<< " points of damage!\n\n";
     if (amount > Hit)
         Hit = 0;
     else
@@ -76,7 +76,7 @@ void    ClapTrap::beRepaired(unsigned int amount)
         return ;
     }
     
-    std::cout << "ClapTrap " << name << " repaired " << amount << " points of Hit!\n\n";
+    std::cout << "(ClapTrap) " << name << " repaired " << amount << " points of Hit!\n\n";
     Energy--;
     Hit += amount;
 }
