@@ -10,16 +10,16 @@ Dog::Dog(std::string type) : Animal (type)
     std::cout << "Dog parametrize constructor" << std::endl;
 }
 
-Dog::Dog(const Dog &dog)
+Dog::Dog(const Dog &dog) : Animal(dog.type)
 {
     std::cout << "Dog copy constructor" << std::endl;
-    *this = dog;
 }
 
 Dog  &Dog::operator=(const Dog &dog)
 {
     std::cout << "Dog copy assignement operator" << std::endl;
     this->type = dog.type;
+    return *this;
 }
 
 Dog::~Dog()

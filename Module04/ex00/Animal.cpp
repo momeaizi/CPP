@@ -20,6 +20,7 @@ Animal  &Animal::operator=(const Animal &animal)
 {
     std::cout << "Animal copy assignement operator" << std::endl;
     this->type = animal.type;
+    return *this;
 }
 
 Animal::~Animal()
@@ -30,4 +31,9 @@ Animal::~Animal()
 const std::string   &Animal::getType() const
 {
     return type;
+}
+
+void    Animal::makeSound() const
+{
+    std::cout << "??????" << std::endl;
 }
