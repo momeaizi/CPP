@@ -27,6 +27,7 @@ MateriaSource   &MateriaSource::operator=(const MateriaSource &mt)
 
 MateriaSource::~MateriaSource()
 {
+    delete [] slot;
     std::cout << "MateriaSource destructor" << std::endl;
 }
 

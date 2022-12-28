@@ -36,6 +36,7 @@ Character   &Character::operator=(const Character &character)
 
 Character::~Character()
 {
+    delete [] slot;
     std::cout << "Character destructor" << std::endl;
 }
 
