@@ -55,7 +55,7 @@ void    Character::equip(AMateria *m)
         if (!slot[i])
         {
             slot[i] = m;
-            break;
+            return ;
         }
     }
 }
@@ -69,7 +69,6 @@ void    Character::unequip(int idx)
 
 void    Character::use(int idx, ICharacter& target)
 {
-    if (idx > 3 || idx < 0)
-        return ;
-    slot[idx]->use(target);
+    if (idx <= 3 && idx >= 0 && slot[idx])
+        slot[idx]->use(target);
 }

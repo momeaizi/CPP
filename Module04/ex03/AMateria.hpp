@@ -1,3 +1,4 @@
+
 #ifndef AMATERIA_HPP
 #define AMATERIA_HPP
 
@@ -15,7 +16,7 @@ class AMateria
     public:
         AMateria();
         AMateria(std::string const &type);
-        ~AMateria();
+        virtual ~AMateria();
 
         std::string const & getType() const;
 

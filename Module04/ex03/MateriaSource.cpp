@@ -34,6 +34,7 @@ MateriaSource::~MateriaSource()
 void    MateriaSource::learnMateria(AMateria  *mt)
 {
     list.addMateria(mt);
+    delete mt;
 
     for (int i = 0; i < 4; i++)
     {
@@ -47,9 +48,9 @@ void    MateriaSource::learnMateria(AMateria  *mt)
 
 AMateria    *MateriaSource::createMateria(std::string const &type)
 {
-    for (int i = 0; i < 4 && slot[i]; i++)
+    for (int i = 0; i < 4; i++)
     {
-        if (slot[i]->getType() == type)
+        if (slot[i] && slot[i]->getType() == type)
             return slot[i]->clone();
     }
     return NULL;
