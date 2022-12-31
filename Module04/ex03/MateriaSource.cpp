@@ -34,7 +34,6 @@ MateriaSource::~MateriaSource()
 void    MateriaSource::learnMateria(AMateria  *mt)
 {
     list.addMateria(mt);
-    delete mt;
 
     for (int i = 0; i < 4; i++)
     {

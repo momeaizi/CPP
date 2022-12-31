@@ -14,8 +14,8 @@ Dog::Dog(const Dog &dog) : Animal("Dog"), brain (new Brain)
 
 Dog  &Dog::operator=(const Dog &dog)
 {
-    *this->brain = *dog.brain;
     std::cout << "Dog copy assignement operator" << std::endl;
+    *this->brain = *dog.brain;
     return *this;
 }
 

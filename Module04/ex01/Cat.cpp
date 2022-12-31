@@ -8,8 +8,8 @@ Cat::Cat() : Animal ("Cat"), brain (new Brain)
 
 Cat::Cat(const Cat &cat) : Animal ("Cat"), brain (new Brain)
 {
-    *this = cat;
     std::cout << "Cat copy constructor" << std::endl;
+    *this = cat;
 }
 
 Cat  &Cat::operator=(const Cat &cat)

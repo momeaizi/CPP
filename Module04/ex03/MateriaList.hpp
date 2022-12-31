@@ -6,8 +6,8 @@
 
 typedef struct node
 {
-    const AMateria    *materia;
-    node    *next;
+    const AMateria      *materia;
+    node                *next;
 }   node;
 
 

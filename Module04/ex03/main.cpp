@@ -12,29 +12,26 @@ void    game()
 
 
     src->learnMateria(new Ice());
-    // src->learnMateria(new Cure());
+    src->learnMateria(new Cure());
 
 
-    // ICharacter* me = new Character("me");
+    ICharacter* me = new Character("me");
     AMateria* tmp;
     tmp = src->createMateria("ice");
-    printf("%p\n", tmp);
-    // me->equip(tmp);
-    // printf("%p\n", tmp;)
-    // tmp = src->createMateria("cure");
-    // me->equip(tmp);
-    // ICharacter* bob = new Character("bob");
-    // me->use(0, *bob);
-    // me->use(1, *bob);
+    me->equip(tmp);
+    tmp = src->createMateria("cure");
+    me->equip(tmp);
+    ICharacter* bob = new Character("bob");
+    me->use(0, *bob);
+    me->use(1, *bob);
 
-    // delete bob;
-    // delete me;
+    delete bob;
+    delete me;
     delete src;
 }
 
 int main()
 {
     game();
-    // system ("leaks Polymorphism");
     return 0;
 }

@@ -10,6 +10,7 @@ MateriaList::~MateriaList()
     {
         tmp = __materias;
         __materias = __materias->next;
+        delete tmp->materia;
         delete tmp;
     }
 }

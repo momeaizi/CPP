@@ -14,7 +14,7 @@ WrongCat::WrongCat(const WrongCat &wrongcat) : WrongAnimal (wrongcat.type)
 WrongCat  &WrongCat::operator=(const WrongCat &wrongcat)
 {
     std::cout << "WrongCat copy assignement operator" << std::endl;
-    this->type = wrongcat.type;
+    (void) wrongcat;
     return *this;
 }
 
