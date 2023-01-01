@@ -6,20 +6,35 @@
 /*   By: momeaizi <momeaizi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/31 13:28:35 by momeaizi          #+#    #+#             */
-/*   Updated: 2023/01/01 12:58:56 by momeaizi         ###   ########.fr       */
+/*   Updated: 2023/01/01 17:23:45 by momeaizi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
+const char* Bureaucrat::GradeTooHighException::what() const _NOEXCEPT
+{
+    return "grade is too high!";
+}
+
+const char* Bureaucrat::GradeTooLowException::what() const _NOEXCEPT
+{
+    return "grade is too low!";
+}
+
+
+
+
+
+
 Bureaucrat::Bureaucrat() : name ("----"), grade (150)
 {
-    std::cout << "Bureaucrat default constructor" << std::endl;
+    // std::cout << "Bureaucrat default constructor" << std::endl;
 }
 
 Bureaucrat::Bureaucrat(const std::string &name, int grade) : name (name)
 {
-    std::cout << "Bureaucrat parametrize constructor" << std::endl;
+    // std::cout << "Bureaucrat parametrize constructor" << std::endl;
     if (grade < 1)
         throw GradeTooHighException();
     if (grade > 150)
@@ -29,19 +44,19 @@ Bureaucrat::Bureaucrat(const std::string &name, int grade) : name (name)
 
 Bureaucrat::Bureaucrat(const Bureaucrat &bc) : name (bc.name), grade (bc.grade)
 {
-    std::cout << "Bureaucrat copy constructor" << std::endl;
+    // std::cout << "Bureaucrat copy constructor" << std::endl;
 }
 
 Bureaucrat  &Bureaucrat::operator=(const Bureaucrat &bc)
 {
-    std::cout << "Bureaucrat copy assignement operator" << std::endl;
+    // std::cout << "Bureaucrat copy assignement operator" << std::endl;
     this->grade = bc.grade;
     return *this;
 }
 
 Bureaucrat::~Bureaucrat()
 {
-    std::cout << "Bureaucrat destructor" << std::endl;
+    // std::cout << "Bureaucrat destructor" << std::endl;
 }
 
 const std::string   &Bureaucrat::getName() const
@@ -75,15 +90,30 @@ void    Bureaucrat::decrementGrade()
     grade++;
 }
 
-
-
-
-const char* Bureaucrat::GradeTooHighException::what() const _NOEXCEPT
+void    Bureaucrat::signForm(Form &form) const
 {
-    return "grade is too high!";
+    try
+    {
+        form.beSigned(*this);
+        std::cout << name << " signed " << form.getName() << std::endl;
+    }
+    catch (std::exception &e)
+    {
+        std::cout << name << "  couldn\'t sign " << form.getName() << " because " << e.what() << std::endl;
+        throw ;
+    }
 }
 
-const char* Bureaucrat::GradeTooLowException::what() const _NOEXCEPT
+void    Bureaucrat::executeForm(Form const & form)
 {
-    return "grade is too low!";
+    try
+    {
+        form.execute(*this);
+        std::cout << name << " executed " << form.getName() << std::endl;
+    }
+    catch (std::exception &e)
+    {
+        std::cout << name << "  couldn\'t execute " << form.getName() << " because " << e.what() << std::endl;
+        throw ;
+    }
 }

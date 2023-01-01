@@ -6,7 +6,7 @@
 /*   By: momeaizi <momeaizi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/31 14:30:59 by momeaizi          #+#    #+#             */
-/*   Updated: 2023/01/01 10:08:46 by momeaizi         ###   ########.fr       */
+/*   Updated: 2023/01/01 13:05:37 by momeaizi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,18 +16,15 @@ int main()
 {
     try
     {
-        // Bureaucrat bureau("bureau", -160);
-
+        Bureaucrat bureau("sa3adat l9ayd", 14);
         
-        // Bureaucrat bureau("bureau", 160);
-
-
-        Bureaucrat bureau("bureau", 150);
-        // bureau.decrementGrade();
+        Form        form("Certificate of celibacy", 15, 15);
         
-        // Bureaucrat bureau("bureau", 1);
-        // bureau.incrementGrade();
+        form.beSigned(bureau);
+
+        bureau.signForm(form);
         
+        std::cout << form << std::endl;
         std::cout << bureau << std::endl;
     }
     catch (std::exception &e)
