@@ -7,7 +7,7 @@ CPPFLAGS = -std=c++98  -Wall -Wextra -Werror #-fsanitize=address -g
 
 SRCS =	main.cpp \
 		Bureaucrat.cpp \
-		Form.cpp 
+		Form.cpp
 
 
 OBJS:=$(SRCS:.cpp=.o)

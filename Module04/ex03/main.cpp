@@ -7,7 +7,6 @@
 
 void    game()
 {
-
     IMateriaSource  *src = new MateriaSource;
 
 

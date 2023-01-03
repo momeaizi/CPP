@@ -6,7 +6,7 @@
 /*   By: momeaizi <momeaizi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/31 13:28:35 by momeaizi          #+#    #+#             */
-/*   Updated: 2023/01/01 17:23:45 by momeaizi         ###   ########.fr       */
+/*   Updated: 2023/01/03 10:45:28 by momeaizi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ const char* Bureaucrat::GradeTooLowException::what() const _NOEXCEPT
 {
     return "grade is too low!";
 }
-
 
 
 
@@ -116,4 +115,14 @@ void    Bureaucrat::executeForm(Form const & form)
         std::cout << name << "  couldn\'t execute " << form.getName() << " because " << e.what() << std::endl;
         throw ;
     }
+}
+
+std::ostream    &operator<<(std::ostream &os, const Bureaucrat &bc)
+{
+    os << "Form of " << form.getName() << " is " ;
+    if (!form.getIsSigned())
+        os << "not " ;
+    os << "signed, grade required to sign it is " << form.getGradeRequiredToSignIt() \
+    << " and grade required to execute it is " << form.getGradeRequiredToExecuteIt();
+    return os;
 }

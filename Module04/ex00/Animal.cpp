@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: momeaizi <momeaizi@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/01/02 10:52:54 by momeaizi          #+#    #+#             */
+/*   Updated: 2023/01/02 10:54:11 by momeaizi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Animal.hpp"
 
 Animal::Animal() : type ("----")
@@ -35,5 +47,5 @@ const std::string   &Animal::getType() const
 
 void    Animal::makeSound() const
 {
-    std::cout << "Animal sound" << std::endl;
+    std::cout << "🔉 Animal sound" << std::endl;
 }

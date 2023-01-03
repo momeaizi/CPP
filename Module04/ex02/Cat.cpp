@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: momeaizi <momeaizi@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/01/02 10:59:11 by momeaizi          #+#    #+#             */
+/*   Updated: 2023/01/02 11:08:24 by momeaizi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Cat.hpp"
 
 
@@ -8,8 +20,8 @@ Cat::Cat() : Animal ("Cat"), brain (new Brain)
 
 Cat::Cat(const Cat &cat) : Animal ("Cat"), brain (new Brain)
 {
-    *this = cat;
     std::cout << "Cat copy constructor" << std::endl;
+    *this = cat;
 }
 
 Cat  &Cat::operator=(const Cat &cat)
@@ -28,4 +40,9 @@ Cat::~Cat()
 void    Cat::makeSound() const
 {
     std::cout << "Meow Meow Meow" << std::endl;
+}
+
+Brain   *Cat::getBrain()
+{
+    return brain;
 }

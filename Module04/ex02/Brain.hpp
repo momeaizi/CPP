@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: momeaizi <momeaizi@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/01/02 10:57:34 by momeaizi          #+#    #+#             */
+/*   Updated: 2023/01/02 11:02:18 by momeaizi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef BRAIN_HPP
 #define BRAIN_HPP
 
@@ -15,7 +27,7 @@ class Brain
         Brain   &operator=(const Brain &brain);
         virtual ~Brain();
 
-        void    addIdea(std::string idea);
+        void                addIdea(const std::string &idea);
         const std::string   *getIdea();
 };
 

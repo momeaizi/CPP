@@ -6,7 +6,7 @@
 /*   By: momeaizi <momeaizi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/01 10:10:18 by momeaizi          #+#    #+#             */
-/*   Updated: 2023/01/01 13:07:09 by momeaizi         ###   ########.fr       */
+/*   Updated: 2023/01/03 15:39:06 by momeaizi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ const char* Form::GradeTooLowException::what() const _NOEXCEPT
     return "grade is too low!";
 }
 
-void    Form::gradeRange(int grade) const
+void    Form::throwIfGradeIsOutOfBounds(int grade) const
 {
     if (grade < 1)
         throw GradeTooHighException();
@@ -38,8 +38,8 @@ Form::Form() : name ("----"), isSigned (false), gradeRequiredToSignIt (1), grade
 Form::Form(const std::string &name, int gradeRequiredToSignIt, int gradeRequiredToExecuteIt) : name (name), isSigned (false), gradeRequiredToSignIt (gradeRequiredToSignIt), gradeRequiredToExecuteIt (gradeRequiredToExecuteIt)
 {
     // std::cout << "Form parametrize constructor" << std::endl;
-    gradeRange(gradeRequiredToSignIt);
-    gradeRange(gradeRequiredToExecuteIt);
+    throwIfGradeIsOutOfBounds(gradeRequiredToSignIt);
+    throwIfGradeIsOutOfBounds(gradeRequiredToExecuteIt);
 }
 
 Form::Form(const Form &form) :  name (form.getName()), isSigned (form.getIsSigned()), 
@@ -90,7 +90,7 @@ void    Form::beSigned(const Bureaucrat &bc)
 
 std::ostream    &operator<<(std::ostream &os, const Form &form)
 {
-    os << "Form of " << form.getName() << " is " ;
+    os << form.getName() << " is " ;
     if (!form.getIsSigned())
         os << "not " ;
     os << "signed, grade required to sign it is " << form.getGradeRequiredToSignIt() \

@@ -4,13 +4,13 @@ MateriaSource::MateriaSource() : slot (new AMateria* [4])
 {
     for (int i = 0; i < 4; i++)
         slot[i] = NULL;
-    std::cout << "MateriaSource default constructor" << std::endl;
+    // std::cout << "MateriaSource default constructor" << std::endl;
 }
 
 MateriaSource::MateriaSource(const MateriaSource &mt) : slot (new AMateria* [4])
 {
     *this = mt;
-    std::cout << "MateriaSource default constructor" << std::endl;
+    // std::cout << "MateriaSource default constructor" << std::endl;
 }
 
 MateriaSource   &MateriaSource::operator=(const MateriaSource &mt)
@@ -21,19 +21,20 @@ MateriaSource   &MateriaSource::operator=(const MateriaSource &mt)
         list.addMateria(this->slot[i]);
     }
 
-    std::cout << "MateriaSource copy assignement operator" << std::endl;
+    // std::cout << "MateriaSource copy assignement operator" << std::endl;
     return *this;
 }
 
 MateriaSource::~MateriaSource()
 {
     delete [] slot;
-    std::cout << "MateriaSource destructor" << std::endl;
+    // std::cout << "MateriaSource destructor" << std::endl;
 }
 
 void    MateriaSource::learnMateria(AMateria  *mt)
 {
-    list.addMateria(mt);
+    if (mt)
+        list.addMateria(mt);
 
     for (int i = 0; i < 4; i++)
     {

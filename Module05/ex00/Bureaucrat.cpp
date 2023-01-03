@@ -6,7 +6,7 @@
 /*   By: momeaizi <momeaizi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/31 13:28:35 by momeaizi          #+#    #+#             */
-/*   Updated: 2023/01/01 12:58:56 by momeaizi         ###   ########.fr       */
+/*   Updated: 2023/01/03 11:23:07 by momeaizi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,34 +14,33 @@
 
 Bureaucrat::Bureaucrat() : name ("----"), grade (150)
 {
-    std::cout << "Bureaucrat default constructor" << std::endl;
+    // std::cout << "Bureaucrat default constructor" << std::endl;
 }
 
-Bureaucrat::Bureaucrat(const std::string &name, int grade) : name (name)
+Bureaucrat::Bureaucrat(const std::string &name, int grade) : name (name), grade (grade)
 {
-    std::cout << "Bureaucrat parametrize constructor" << std::endl;
+    // std::cout << "Bureaucrat parametrize constructor" << std::endl;
     if (grade < 1)
         throw GradeTooHighException();
     if (grade > 150)
         throw GradeTooLowException();
-    this->grade = grade;
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat &bc) : name (bc.name), grade (bc.grade)
 {
-    std::cout << "Bureaucrat copy constructor" << std::endl;
+    // std::cout << "Bureaucrat copy constructor" << std::endl;
 }
 
 Bureaucrat  &Bureaucrat::operator=(const Bureaucrat &bc)
 {
-    std::cout << "Bureaucrat copy assignement operator" << std::endl;
+    // std::cout << "Bureaucrat copy assignement operator" << std::endl;
     this->grade = bc.grade;
     return *this;
 }
 
 Bureaucrat::~Bureaucrat()
 {
-    std::cout << "Bureaucrat destructor" << std::endl;
+    // std::cout << "Bureaucrat destructor" << std::endl;
 }
 
 const std::string   &Bureaucrat::getName() const

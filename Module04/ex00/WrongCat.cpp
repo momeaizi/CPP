@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   WrongCat.cpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: momeaizi <momeaizi@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/01/02 10:52:38 by momeaizi          #+#    #+#             */
+/*   Updated: 2023/01/02 10:54:33 by momeaizi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "WrongCat.hpp"
 
 
@@ -25,5 +37,5 @@ WrongCat::~WrongCat()
 
 void    WrongCat::makeSound() const
 {
-    std::cout << "Meow Meow Meow" << std::endl;
+    std::cout << "🔉 Meow Meow Meow" << std::endl;
 }

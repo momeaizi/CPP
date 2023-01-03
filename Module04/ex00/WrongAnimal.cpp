@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   WrongAnimal.cpp                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: momeaizi <momeaizi@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/01/02 10:52:29 by momeaizi          #+#    #+#             */
+/*   Updated: 2023/01/02 10:54:29 by momeaizi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "WrongAnimal.hpp"
 
 WrongAnimal::WrongAnimal() : type ("----")
@@ -35,5 +47,5 @@ const std::string   &WrongAnimal::getType() const
 
 void    WrongAnimal::makeSound() const
 {
-    std::cout << "Wrong animal sound" << std::endl;
+    std::cout << "🔉 Wrong animal sound" << std::endl;
 }

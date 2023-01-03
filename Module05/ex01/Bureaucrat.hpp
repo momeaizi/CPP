@@ -6,7 +6,7 @@
 /*   By: momeaizi <momeaizi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/31 13:27:51 by momeaizi          #+#    #+#             */
-/*   Updated: 2023/01/01 14:47:07 by momeaizi         ###   ########.fr       */
+/*   Updated: 2023/01/03 15:37:33 by momeaizi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,7 @@
 #include <iostream>
 #include "Form.hpp"
 
-
-class Form;
+class   Form;
 
 class Bureaucrat
 {
@@ -41,6 +40,9 @@ class Bureaucrat
         const std::string   &getName() const;
         int                 getGrade() const;
 
+
+
+
         class GradeTooHighException  : public std::exception
         {
             public:
@@ -52,7 +54,6 @@ class Bureaucrat
             public:
                 const char* what() const _NOEXCEPT;
         };
-
 };
 
 std::ostream    &operator<<(std::ostream &os, const Bureaucrat &bc);

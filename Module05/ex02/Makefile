@@ -3,14 +3,14 @@ NAME =	Exception
 
 CXX = c++ 
 
-CPPFLAGS = -std=c++98  -Wall -Wextra -Werror #-fsanitize=address -g
+CPPFLAGS = -std=c++98  -Wall -Wextra -Werror -fsanitize=address -g
 
 SRCS =	main.cpp \
 		Bureaucrat.cpp \
 		Form.cpp \
 		ShrubberyCreationForm.cpp \
-		PresidentialPardonForm \
-		RobotomyRequestForm
+		PresidentialPardonForm.cpp \
+		RobotomyRequestForm.cpp
 
 
 

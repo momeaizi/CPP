@@ -12,7 +12,7 @@ typedef struct node
 
 
 
-class MateriaList
+typedef struct MateriaList
 {
     private:
         node    *__materias;
@@ -21,7 +21,7 @@ class MateriaList
         ~MateriaList();
 
         void    addMateria(const AMateria *materia);
-};
+}              MateriaList;
 
 
 

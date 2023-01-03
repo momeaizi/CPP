@@ -6,7 +6,7 @@
 /*   By: momeaizi <momeaizi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/01 10:10:32 by momeaizi          #+#    #+#             */
-/*   Updated: 2023/01/01 18:01:41 by momeaizi         ###   ########.fr       */
+/*   Updated: 2023/01/03 10:13:18 by momeaizi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,19 +46,6 @@ class Form
         void                beExecuted(const Bureaucrat &bc) const;
         
         virtual void        execute(Bureaucrat const & executor) const = 0;
-
-        
-        class GradeTooHighException  : public std::exception
-        {
-            public:
-                const char* what() const _NOEXCEPT;
-        };
-
-        class GradeTooLowException  : public std::exception
-        {
-            public:
-                const char* what() const _NOEXCEPT;
-        };
 };
 
 std::ostream    &operator<<(std::ostream &os, const Form &form);

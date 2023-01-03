@@ -6,7 +6,7 @@
 /*   By: momeaizi <momeaizi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/01 10:10:32 by momeaizi          #+#    #+#             */
-/*   Updated: 2023/01/01 13:00:15 by momeaizi         ###   ########.fr       */
+/*   Updated: 2023/01/03 15:36:33 by momeaizi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ class Form
         Form(const Form &form);
         Form    &operator=(const Form &form);
         Form(const std::string &name, \
-            int gradeRequiredToSignIt, int gradeRequiredToExecuteIt);
+                    int gradeRequiredToSignIt, int gradeRequiredToExecuteIt);
         ~Form();
 
         const std::string   &getName() const;
@@ -41,7 +41,7 @@ class Form
         int                 getGradeRequiredToSignIt() const;
         int                 getGradeRequiredToExecuteIt() const;
 
-        void                gradeRange(int grade) const;
+        void                throwIfGradeIsOutOfBounds(int grade) const;
         void                beSigned(const Bureaucrat &bc);
 
         

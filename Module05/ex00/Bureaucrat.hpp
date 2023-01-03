@@ -6,7 +6,7 @@
 /*   By: momeaizi <momeaizi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/31 13:27:51 by momeaizi          #+#    #+#             */
-/*   Updated: 2023/01/01 12:58:45 by momeaizi         ###   ########.fr       */
+/*   Updated: 2023/01/03 11:20:15 by momeaizi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,9 @@ class Bureaucrat
         const std::string   &getName() const;
         int                 getGrade() const;
 
+
+
+
         class GradeTooHighException  : public std::exception
         {
             public:
@@ -50,7 +53,6 @@ class Bureaucrat
             public:
                 const char* what() const _NOEXCEPT;
         };
-
 };
 
 std::ostream    &operator<<(std::ostream &os, const Bureaucrat &bc);

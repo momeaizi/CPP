@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: momeaizi <momeaizi@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/01/02 10:53:00 by momeaizi          #+#    #+#             */
+/*   Updated: 2023/01/02 10:54:20 by momeaizi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Dog.hpp"
 
 Dog::Dog() : Animal ("Dog")
@@ -26,5 +38,5 @@ Dog::~Dog()
 
 void    Dog::makeSound() const
 {
-    std::cout << "Woof Woof Woof" << std::endl;
+    std::cout << "🔉 Woof Woof Woof" << std::endl;
 }

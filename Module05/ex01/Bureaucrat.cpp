@@ -6,40 +6,24 @@
 /*   By: momeaizi <momeaizi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/31 13:28:35 by momeaizi          #+#    #+#             */
-/*   Updated: 2023/01/01 14:48:15 by momeaizi         ###   ########.fr       */
+/*   Updated: 2023/01/03 15:47:23 by momeaizi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-
-const char* Bureaucrat::GradeTooHighException::what() const _NOEXCEPT
-{
-    return "grade is too high!";
-}
-
-const char* Bureaucrat::GradeTooLowException::what() const _NOEXCEPT
-{
-    return "grade is too low!";
-}
-
-
-
-
-
 
 Bureaucrat::Bureaucrat() : name ("----"), grade (150)
 {
     // std::cout << "Bureaucrat default constructor" << std::endl;
 }
 
-Bureaucrat::Bureaucrat(const std::string &name, int grade) : name (name)
+Bureaucrat::Bureaucrat(const std::string &name, int grade) : name (name), grade (grade)
 {
-    std::cout << "Bureaucrat parametrize constructor" << std::endl;
+    // std::cout << "Bureaucrat parametrize constructor" << std::endl;
     if (grade < 1)
         throw GradeTooHighException();
     if (grade > 150)
         throw GradeTooLowException();
-    this->grade = grade;
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat &bc) : name (bc.name), grade (bc.grade)
@@ -100,6 +84,16 @@ void    Bureaucrat::signForm(Form &form) const
     catch (std::exception &e)
     {
         std::cout << name << "  couldn\'t sign " << form.getName() << " because " << e.what() << std::endl;
-        throw ;
     }
+}
+
+
+const char* Bureaucrat::GradeTooHighException::what() const _NOEXCEPT
+{
+    return "grade is too high!";
+}
+
+const char* Bureaucrat::GradeTooLowException::what() const _NOEXCEPT
+{
+    return "grade is too low!";
 }

@@ -6,7 +6,7 @@
 /*   By: momeaizi <momeaizi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/01 17:28:29 by momeaizi          #+#    #+#             */
-/*   Updated: 2023/01/01 17:56:22 by momeaizi         ###   ########.fr       */
+/*   Updated: 2023/01/03 09:47:03 by momeaizi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,12 @@ RobotomyRequestForm::~RobotomyRequestForm()
 void    RobotomyRequestForm::execute(Bureaucrat const &executor) const
 {
     this->beExecuted(executor);
-    /*
-        execute
-    */
 
+    srand((unsigned) time(NULL));
+	int random = rand();
+    
+    if (random % 2)
+        std::cout << target << " has been robotomized successfully" << std::endl;
+    else
+        std::cout << "the robotomy failed" << std::endl;
 }
