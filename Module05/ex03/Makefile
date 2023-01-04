@@ -6,12 +6,13 @@ CXX = c++
 CPPFLAGS = -std=c++98  -Wall -Wextra -Werror #-fsanitize=address -g
 
 SRCS =	main.cpp \
-		MateriaList.cpp \
-		Ice.cpp \
-		Character.cpp \
-		Cure.cpp \
-		AMateria.cpp \
-		MateriaSource.cpp
+		Bureaucrat.cpp \
+		Form.cpp \
+		ShrubberyCreationForm.cpp \
+		PresidentialPardonForm.cpp \
+		RobotomyRequestForm.cpp \
+		Intern.cpp
+
 
 
 OBJS:=$(SRCS:.cpp=.o)

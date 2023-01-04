@@ -6,7 +6,7 @@
 /*   By: momeaizi <momeaizi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/01 18:06:55 by momeaizi          #+#    #+#             */
-/*   Updated: 2023/01/01 18:34:14 by momeaizi         ###   ########.fr       */
+/*   Updated: 2023/01/04 11:13:29 by momeaizi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ Intern::~Intern()
 
 
 
-Form    *InternmakeForm(const std::string &formName, const std::string &target)
+Form    *Intern::makeForm(const std::string &formName, const std::string &target)
 {
     const std::string   formNames[3] = {"ShrubberyCreationForm", "PresidentialPardonForm", "RobotomyRequestForm"};
     Form                *forms[3] = {new ShrubberyCreationForm(target), new PresidentialPardonForm(target), new RobotomyRequestForm(target)};
@@ -59,10 +59,8 @@ Form    *InternmakeForm(const std::string &formName, const std::string &target)
     }
 
     if (index == -1)
-    {
-        std::cout << formName << " doesn\'t exist!" << std::endl;
-        return NULL;
-    }
+        throw FormDoesNotExist();
+        
     std::cout << "Intern creates " << formName << std::endl;
     return forms[index];
 }

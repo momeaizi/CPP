@@ -6,7 +6,7 @@
 /*   By: momeaizi <momeaizi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/01 18:03:32 by momeaizi          #+#    #+#             */
-/*   Updated: 2023/01/01 18:21:35 by momeaizi         ###   ########.fr       */
+/*   Updated: 2023/01/04 11:06:05 by momeaizi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,7 @@
 
 
 class Intern
-{
-    private:
-        
+{       
     public:
         Intern();
         Intern(const Intern &inter);
