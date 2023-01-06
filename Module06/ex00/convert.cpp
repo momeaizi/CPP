@@ -6,7 +6,7 @@
 /*   By: momeaizi <momeaizi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 16:37:00 by momeaizi          #+#    #+#             */
-/*   Updated: 2023/01/06 17:56:36 by momeaizi         ###   ########.fr       */
+/*   Updated: 2023/01/06 18:41:17 by momeaizi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,6 @@ void	toDouble(const std::string &str, TYPE type)
 		d = static_cast<double>(stoi(str));
 	else
 		d = stod(str);
-
 	std::cout << d << std::endl;
 }
 
@@ -101,7 +100,7 @@ TYPE	getType(const std::string &str)
 
 	for (; i < str.length(); i++)
 	{
-		if (str[i] == 'f' && i + 1 == str.length())
+		if (str[i] == 'f' && i + 1 == str.length() && type == DOUBLE && i > 1)
 			type = FLOAT;
 		else if (str[i] == '.' && type != DOUBLE)
 			type = DOUBLE;
@@ -113,12 +112,31 @@ TYPE	getType(const std::string &str)
 	return type;
 }
 
+TYPE	isKeyword(const std::string &str)
+{
+	if (str == "-inff" || str == "+inff" || str == "nanf")
+		return FLOAT;
+	if (str == "-inf" || str == "+inf" || str == "nan")
+		return DOUBLE;
+	return NONE;
+}
 
 void	convert(const std::string &str)
 {
 	try
 	{
-		int	type = getType(str);
+		int	type = isKeyword(str);
+
+		if (type != NONE)
+		{
+			std::cout << "char: impossible" << std::endl;
+			std::cout << "int: impossible" << std::endl;
+			toFloat(str, type);
+			toDouble(str, type);
+			return ;
+		}
+		
+		type = getType(str);
 
 		toChar(str, type);
 		toInt(str, type);

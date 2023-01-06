@@ -6,7 +6,7 @@
 /*   By: momeaizi <momeaizi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 16:35:42 by momeaizi          #+#    #+#             */
-/*   Updated: 2023/01/06 17:11:57 by momeaizi         ###   ########.fr       */
+/*   Updated: 2023/01/06 18:27:17 by momeaizi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 
 #define TYPE   int
 
+#define NONE   0
 #define CHAR   1
 #define INT    2
 #define FLOAT  3
