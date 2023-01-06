@@ -1,4 +1,4 @@
-NAME =	Exception
+NAME =	convert
 
 
 CXX = c++ 
@@ -6,7 +6,7 @@ CXX = c++
 CPPFLAGS = -std=c++98  -Wall -Wextra -Werror #-fsanitize=address -g
 
 SRCS =	main.cpp \
-		Bureaucrat.cpp
+		convert.cpp
 
 
 OBJS:=$(SRCS:.cpp=.o)

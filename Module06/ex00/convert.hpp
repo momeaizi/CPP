@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   convert.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: momeaizi <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: momeaizi <momeaizi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 16:35:42 by momeaizi          #+#    #+#             */
-/*   Updated: 2023/01/05 16:48:20 by momeaizi         ###   ########.fr       */
+/*   Updated: 2023/01/06 17:11:57 by momeaizi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,24 @@
 
 #include <iostream>
 #include <string>
+#include <iomanip>
 
+#define TYPE   int
+
+#define CHAR   1
+#define INT    2
+#define FLOAT  3
+#define DOUBLE 4
+
+class InvalidInput  : public std::exception
+{
+    public:
+        const char* what() const _NOEXCEPT;
+};
+
+void	toInt(const std::string &str, TYPE type);
+void	toChar(const std::string &str, TYPE type);
+void	toFloat(const std::string &str, TYPE type);
+void	toDouble(const std::string &str, TYPE type);
+void	convert(const std::string &str);
 #endif
