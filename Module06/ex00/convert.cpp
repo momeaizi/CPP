@@ -6,7 +6,7 @@
 /*   By: momeaizi <momeaizi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 16:37:00 by momeaizi          #+#    #+#             */
-/*   Updated: 2023/01/06 18:41:17 by momeaizi         ###   ########.fr       */
+/*   Updated: 2023/01/07 09:32:28 by momeaizi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ void	toInt(const std::string &str, TYPE type)
 {
 	int	i;
 
-	std::cout << "int: ";
 
 	if (type == CHAR)
 		i = static_cast<int>(str[0]);
@@ -32,14 +31,13 @@ void	toInt(const std::string &str, TYPE type)
 	else
 		i = stoi(str);
 
-	std::cout << i << std::endl;
+	std::cout << "int: " << i << std::endl;
 }
 
 void	toChar(const std::string &str, TYPE type)
 {
 	char	c = str[0];
 
-	std::cout << "char: ";
 
 	if (type == FLOAT)
 		c = static_cast<char>(stof(str));
@@ -48,6 +46,7 @@ void	toChar(const std::string &str, TYPE type)
 	else if (type == INT)
 		c = static_cast<char>(stoi(str));
 
+	std::cout << "char: ";
 	if (c >= 32 && c <= 126)
 		std::cout << c << std::endl;
 	else
@@ -58,8 +57,6 @@ void	toFloat(const std::string &str, TYPE type)
 {
 	float	f;
 
-	std::cout << "float: ";
-
 	if (type == CHAR)
 		f = static_cast<float>(str[0]);
 	else if (type == DOUBLE)
@@ -69,14 +66,12 @@ void	toFloat(const std::string &str, TYPE type)
 	else
 		f = stof(str);
 
-	std::cout << f << "f" << std::endl;
+	std::cout << "float: " << f << "f" << std::endl;
 }
 
 void	toDouble(const std::string &str, TYPE type)
 {
 	double	d;
-
-	std::cout << "double: ";
 
 	if (type == CHAR)
 		d = static_cast<double>(str[0]);
@@ -86,7 +81,7 @@ void	toDouble(const std::string &str, TYPE type)
 		d = static_cast<double>(stoi(str));
 	else
 		d = stod(str);
-	std::cout << d << std::endl;
+	std::cout << "double: " << d << std::endl;
 }
 
 
