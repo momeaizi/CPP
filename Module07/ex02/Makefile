@@ -1,12 +1,11 @@
-NAME =	convert
+NAME =	array
 
 
 CXX = c++ 
 
 CPPFLAGS = -std=c++98  -Wall -Wextra -Werror #-fsanitize=address -g
 
-SRCS =	main.cpp \
-		convert.cpp
+SRCS =	main.cpp
 
 
 OBJS:=$(SRCS:.cpp=.o)
