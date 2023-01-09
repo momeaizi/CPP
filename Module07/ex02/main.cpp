@@ -6,7 +6,7 @@
 /*   By: momeaizi <momeaizi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/08 13:30:46 by momeaizi          #+#    #+#             */
-/*   Updated: 2023/01/08 15:02:28 by momeaizi         ###   ########.fr       */
+/*   Updated: 2023/01/08 16:25:43 by momeaizi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,10 @@ void    testComplexType()
         strs[1] = "taha";
         strs[2] = "meaizi";
         strs[3] = "1337";
-        // strs[4] = "1337";
+        // Array<std::string>  *p = &strs;
+        // strs = *p;
+        
+        // strs[-4] = "1337";
 
         for (unsigned int i = 0; i < strs.size(); i++)
             std::cout << strs[i] << std::endl;

@@ -1,36 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   iter.hpp                                           :+:      :+:    :+:   */
+/*   easyfind.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: momeaizi <momeaizi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/07 20:26:41 by momeaizi          #+#    #+#             */
-/*   Updated: 2023/01/08 16:04:18 by momeaizi         ###   ########.fr       */
+/*   Created: 2023/01/08 17:50:53 by momeaizi          #+#    #+#             */
+/*   Updated: 2023/01/08 18:48:15 by momeaizi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef TEMPLATE_HPP
-#define TEMPLATE_HPP
+#ifndef EASYFIND_HPP
+#define EASYFIND_HPP
 
-#include <iostream>
-#include <string>
+#include <algorithm> 
+#include <exception>
+
+class NoOccurrenceFound : public std::exception
+{
+    public:
+        const char* what() const throw();
+};
 
 
 template <typename T>
-void   print(T &e)
+unsigned int    easyfind( T &c, int e)
 {
-    std::cout << "  " << e << std::endl;
+    typename T::iterator it;
+
+    it = std::find(c.begin(), c.end(), e);
+    if (it == c.end())
+        throw NoOccurrenceFound();
+    return it - c.begin();
 }
-
-template <typename T>
-void   iter(T *p, size_t size, void (*func)(const T&))
-{
-    for (size_t i = 0; i < size; i++)
-        func(p[i]);
-}
-
-
 
 
 #endif

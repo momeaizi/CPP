@@ -6,7 +6,7 @@
 /*   By: momeaizi <momeaizi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/08 13:06:04 by momeaizi          #+#    #+#             */
-/*   Updated: 2023/01/08 14:47:07 by momeaizi         ###   ########.fr       */
+/*   Updated: 2023/01/08 16:24:52 by momeaizi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ class Array
         Array(unsigned int n);
         Array(const Array<T> &array);
         Array<T>    &operator=(const Array<T> &array);
-        T           &operator[](unsigned int i);
+        T           &operator[](long i);
         unsigned int    size() const;
 
         class OutOfRange : public std::exception
@@ -73,6 +73,8 @@ Array<T>::Array(const Array<T> &array) : __size (array.__size)
 template <typename T>
 Array<T>   &Array<T>::operator=(const Array<T> &array)
 {
+    if (this == &array)
+        return *this;
     __size = array.__size;
     delete [] __array;
     __array = new T[__size];
@@ -86,9 +88,9 @@ Array<T>   &Array<T>::operator=(const Array<T> &array)
 /*                           subscript operator                                */
 /* *************************************************************************** */
 template <typename T>
-T   &Array<T>::operator[](unsigned int i)
+T   &Array<T>::operator[](long i)
 {
-    if (i >= __size)
+    if (i < 0 || i >= static_cast<long>(__size))
         throw OutOfRange();
     return __array[i];
 }
