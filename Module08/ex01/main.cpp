@@ -6,7 +6,7 @@
 /*   By: momeaizi <momeaizi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/08 17:50:01 by momeaizi          #+#    #+#             */
-/*   Updated: 2023/01/09 13:36:06 by momeaizi         ###   ########.fr       */
+/*   Updated: 2023/01/09 15:35:04 by momeaizi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,19 +15,22 @@
 
 int main()
 {
+    int arr[] = {6, 3, 17, 9, 16, 11};
     try
     {
-        Span sp = Span(5);
+        Span sp();
     
-        sp.addNumber(6);
-        std::cout << sp << std::endl;
-        sp.addNumber(3);
-        std::cout << sp << std::endl;
-        sp.addNumber(17);
-        std::cout << sp << std::endl;
-        sp.addNumber(9);
-        std::cout << sp << std::endl;
-        sp.addNumber(11);
+        // sp.addNumber(6);
+        // std::cout << sp << std::endl;
+        // sp.addNumber(3);
+        // std::cout << sp << std::endl;
+        // sp.addNumber(17);
+        // std::cout << sp << std::endl;
+        // sp.addNumber(9);
+        // std::cout << sp << std::endl;
+        // sp.addNumber(16);
+        // std::cout << sp << std::endl;
+        sp.addNumbers(arr);
         std::cout << sp << std::endl;
         
         std::cout << sp.shortestSpan() << std::endl;

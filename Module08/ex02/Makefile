@@ -1,4 +1,4 @@
-NAME =	templateFunction
+NAME =	MutantStack
 
 
 CXX = c++ 

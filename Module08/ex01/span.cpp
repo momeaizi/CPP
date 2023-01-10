@@ -6,7 +6,7 @@
 /*   By: momeaizi <momeaizi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/08 19:46:15 by momeaizi          #+#    #+#             */
-/*   Updated: 2023/01/09 13:37:32 by momeaizi         ###   ########.fr       */
+/*   Updated: 2023/01/09 15:05:05 by momeaizi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,6 @@ void    Span::addNumbers(int *range, size_t n)
     if (__nums.capacity() - __nums.size() < n)
         throw SpanIsFull();
 
-    __nums.insert(__nums.end(), range, range + n);
     for (size_t i = 0; i < n; i++)
         insert(range[i]);
 }
@@ -62,7 +61,7 @@ void    Span::insert(int nbr)
 {
     std::vector<int>::iterator   lower = __nums.begin();
 
-    lower = std::upper_bound(__nums.begin(), __nums.end(), 6);
+    lower = std::lower_bound(__nums.begin(), __nums.end(), nbr);
     
     __nums.insert(lower, nbr);
 
@@ -70,12 +69,12 @@ void    Span::insert(int nbr)
         return ;
 
     if (lower > __nums.begin())
-        if (static_cast<unsigned int>(abs(*__nums.begin() - *lower)) < __short)
-            __short = static_cast<unsigned int>(abs(*__nums.begin() - *lower));
+        if (static_cast<unsigned int>(abs(*(lower - 1) - *lower)) < __short)
+            __short = static_cast<unsigned int>(abs(*(lower - 1) - *lower));
 
-    if (lower < __nums.end())
-        if (static_cast<unsigned int>(abs(*lower - *(__nums.end() - 1))) < __short)
-            __short = static_cast<unsigned int>(abs(*__nums.begin() - *lower));
+    if (lower < __nums.end() - 1)
+        if (static_cast<unsigned int>(abs(*(lower + 1) - *lower)) < __short)
+            __short = static_cast<unsigned int>(abs(*(lower + 1) - *lower));
 
         
 }
@@ -93,6 +92,7 @@ unsigned int    Span::longestSpan()
         throw SpanAlmostEmpty();
     return *(__nums.end() - 1) - *__nums.begin();
 }
+
 const std::vector<int>  &Span::getVec() const
 {
     return __nums;
