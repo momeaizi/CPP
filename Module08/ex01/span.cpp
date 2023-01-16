@@ -6,7 +6,7 @@
 /*   By: momeaizi <momeaizi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/08 19:46:15 by momeaizi          #+#    #+#             */
-/*   Updated: 2023/01/09 15:05:05 by momeaizi         ###   ########.fr       */
+/*   Updated: 2023/01/16 09:17:58 by momeaizi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,10 @@ Span::Span(const Span &span) : __nums (span.__nums), __short (span.__short) {}
 
 Span    &Span::operator=(const Span &span)
 {
-    if (this != &span)
-        __nums = span.__nums;
+    if (this == &span)
+        return *this;
+    __nums = span.__nums;
+    __short = span.__short;
     return *this;
 }
 

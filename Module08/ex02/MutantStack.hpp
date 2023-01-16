@@ -6,7 +6,7 @@
 /*   By: momeaizi <momeaizi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 15:08:20 by momeaizi          #+#    #+#             */
-/*   Updated: 2023/01/10 16:27:06 by momeaizi         ###   ########.fr       */
+/*   Updated: 2023/01/16 09:25:28 by momeaizi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@ class MutantStack : public std::stack<T, Container>
         MutantStack &operator=(const MutantStack &ms);
         ~MutantStack() {};
 
-        iterator    begin();
-        iterator    end();
+        iterator    begin() { return this->c.begin(); }
+        iterator    end() { return this->c.end(); }
 };
 
 
@@ -51,17 +51,5 @@ MutantStack<T, Container> &MutantStack<T, Container>::operator=(const MutantStac
 }
 
 
-
-template <typename T, typename Container>
-typename MutantStack<T, Container>::iterator   MutantStack<T, Container>::begin()
-{
-    return this->c.begin();
-}
-
-template <typename T, typename Container>
-typename MutantStack<T, Container>::iterator   MutantStack<T, Container>::end()
-{
-    return this->c.end();
-}
 
 #endif
